@@ -42,7 +42,7 @@ const Search: React.FC = () => {
               <h4>Omar AbdElRahman</h4>
             </IonText>
 
-            <IonAvatar>
+            <IonAvatar security="" slot="start">
               <IonImg
                 src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
                 className="fixit__header__avatar"

@@ -23,7 +23,7 @@ interface MapsProps {
       const map = new mapboxgl.Map({
         //important id for the container insert into div
         container: "map",
-        style: 'mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips',
+        style: 'mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips?optimize=true',
         center: [26.8206, 30.8025],
         zoom: 3,
         

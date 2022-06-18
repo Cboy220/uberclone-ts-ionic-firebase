@@ -1,6 +1,7 @@
 import {
   IonAvatar,
   IonButton,
+  IonButtons,
   IonCol,
   IonContent,
   IonGrid,
@@ -29,36 +30,37 @@ const Search: React.FC = () => {
         <Map name="Map" />
         {/**Header */}
 
-       <IonGrid>
-        <IonRow>
-          <IonCol>
-          <IonImg
-              src={
-                "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
-              }
-              className="fixit__header__logo"
-            />
-          </IonCol>
-          <IonCol>
-          <IonText>
-              <h4>Omar AbdElRahman</h4>
-            </IonText>
-
-            <IonAvatar security="" slot="">
+        <IonGrid>
+          <IonRow>
+            <IonCol>
               <IonImg
-                src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
-                className="fixit__header__avatar"
+                src={
+                  "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
+                }
+                className="fixit__header__logo"
               />
-            </IonAvatar>
-          </IonCol>
-        </IonRow>
-        </IonGrid>
-         
+            </IonCol>
+            <IonCol>
+              <IonText>
+                <h4>Omar AbdElRahman</h4>
+              </IonText>
 
+              <IonAvatar security="" slot="">
+                <IonImg
+                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
+                  className="fixit__header__avatar"
+                />
+              </IonAvatar>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+        <IonButtons>
+          <IonButton color={"success"}>Action Btn</IonButton>
+          <IonButton color={"secondary"}>Action Btn</IonButton>
+          <IonButton color={"icon-only"}>Action Btn</IonButton>
+        </IonButtons>
         {/**Action Btns */}
-        <IonButton expand="block" color={"success"}>
-          Action Btn
-        </IonButton>
+
         {/**input btn */}
       </IonContent>
     </IonPage>

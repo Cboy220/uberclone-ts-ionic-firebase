@@ -5,3 +5,17 @@
     max-width: 150px;
 
 }
+
+.fixit__header__avatar{
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    border-radius: 28px;
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 150px;
+    padding-bottom: 1px;
+    justify-items: right;
+    justify-content: right;
+    left: 50%;
+}

@@ -18,6 +18,9 @@ const Search: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <Map name="Map"/>
+            {/**Header */}
+      {/**Action Btns */}
+      {/**input btn */}
       </IonContent>
     </IonPage>
   );

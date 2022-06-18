@@ -17,18 +17,12 @@ interface MapsProps {
   }
   
   const Maps: React.FC<MapsProps> = ({ name }) => {
-   /**
-    *  let map = new mapboxgl.Map({
-      container: 'map', // container ID
-      style: 'mapbox://styles/mapbox/streets-v11', // style URL
-      
-    });
-    */
+
 
     useEffect(() => {
       const map = new mapboxgl.Map({
         container: "map",
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips',
         center: [26.8206, 30.8025],
         zoom: 3,
       })

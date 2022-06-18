@@ -7,8 +7,6 @@ import {
   IonGrid,
   IonHeader,
   IonImg,
-  IonItem,
-  IonItemGroup,
   IonPage,
   IonRow,
   IonText,
@@ -54,10 +52,32 @@ const Search: React.FC = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
-        <IonButtons>
-          <IonButton color={"success"}>Action Btn</IonButton>
-          <IonButton color={"secondary"}>Action Btn</IonButton>
-          <IonButton color={"icon-only"}>Action Btn</IonButton>
+        <IonButtons slot="">
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+                <IonAvatar>
+                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
+                </IonAvatar>
+                <IonButton color={"success"}>
+                  <IonText>
+                    <h5>Male Worker</h5>
+                  </IonText>
+                </IonButton>
+              </IonCol>
+
+              <IonCol>
+                <IonAvatar>
+                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
+                </IonAvatar>
+                <IonButton color={"secondary"}>
+                  <IonText>
+                    <h5>Profession</h5>
+                  </IonText>
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
         </IonButtons>
         {/**Action Btns */}
 

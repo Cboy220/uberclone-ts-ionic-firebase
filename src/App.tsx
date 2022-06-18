@@ -34,6 +34,10 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.scss';
 
+/**Mapbox-gl */
+import "mapbox-gl/dist/mapbox-gl.css"
+
+
 setupIonicReact();
 
 const App: React.FC = () => (

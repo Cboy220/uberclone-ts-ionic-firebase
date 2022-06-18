@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+const mapboxgl = require('mapbox-gl');
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g';
+
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,14 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Tab1.scss';
+import './Search.scss';
 import Map from '../../components/Map/Map';
 
-const Tab1: React.FC = () => {
+const Search: React.FC = () => {
   
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Search</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -23,4 +23,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default Search;

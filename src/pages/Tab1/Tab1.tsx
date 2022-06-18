@@ -3,6 +3,7 @@ import './Tab1.scss';
 import Map from '../../components/Map/Map';
 
 const Tab1: React.FC = () => {
+  
   return (
     <IonPage>
       <IonHeader>

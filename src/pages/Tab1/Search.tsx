@@ -15,7 +15,10 @@ const Search: React.FC = () => {
       
         <Map name="Map"/>
             {/**Header */}
-           <IonImg src={"https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"}/>
+           <IonImg 
+           src={"https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"}
+           className="fixit__header__logo"
+           />
       {/**Action Btns */}
       {/**input btn */}
       </IonContent>

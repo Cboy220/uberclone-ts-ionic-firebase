@@ -21,10 +21,12 @@ interface MapsProps {
 
     useEffect(() => {
       const map = new mapboxgl.Map({
+        //important id for the container insert into div
         container: "map",
         style: 'mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips',
         center: [26.8206, 30.8025],
         zoom: 3,
+        
       })
     
    
@@ -32,7 +34,7 @@ interface MapsProps {
 
 
     return (
-      <div className="container__map" id="map">
+      <div className="container__map" /*important id for map container */id="map">
         <strong>{name}</strong>
       </div>
     );

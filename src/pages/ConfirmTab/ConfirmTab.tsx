@@ -1,5 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './ConfirmTab.scss';
+import Map from '../../components/Map/Map';
 
 const ConfirmTab: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const ConfirmTab: React.FC = () => {
             <IonTitle size="large">Confirm</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <Map name={'map'}/>
       </IonContent>
     </IonPage>
   );

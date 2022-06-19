@@ -18,7 +18,7 @@ import {
 import "./HomeTab.scss";
 import Map from "../../components/Map/Map";
 
-const Home: React.FC = () => {
+const HomeTab: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -122,4 +122,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomeTab;

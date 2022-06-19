@@ -13,7 +13,7 @@ import Map from "../../components/Map/Map";
 import { useEffect } from "react";
 
 const ConfirmTab: React.FC = () => {
-  const getCoordiantes = () => {
+  const getPickUpCoordiantes = () => {
     const location = "Cairo";
     // Fetch Function
     const access_token = "access_token=";
@@ -26,14 +26,14 @@ const ConfirmTab: React.FC = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.features[0].center);
       });
   };
 
   //call function with useEffect
 
   useEffect(() => {
-    getCoordiantes();
+    getPickUpCoordiantes();
   }, []);
 
   return (

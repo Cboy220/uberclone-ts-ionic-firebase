@@ -10,6 +10,7 @@ import {
   IonInput,
   IonItemDivider,
   IonPage,
+  IonRouterOutlet,
   IonRow,
   IonText,
   IonTitle,
@@ -17,6 +18,9 @@ import {
 } from "@ionic/react";
 import "./Home.scss";
 import Map from "../../components/Map/Map";
+import { IonReactRouter } from "@ionic/react-router";
+import Search from "../Search/Search";
+import { Route } from "react-router";
 
 const Home: React.FC = () => {
   return (
@@ -54,20 +58,27 @@ const Home: React.FC = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
+    
         <IonButtons slot="">
           <IonGrid>
             <IonRow>
               <IonCol>
-                <IonAvatar>
-                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
+              <IonRouterOutlet>
+              <Route exact={true} path="/tabs/search" component={Search}/>
+
+              </IonRouterOutlet>
+
+              <IonAvatar>
+                  <IonImg  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
                 </IonAvatar>
+               
                 <IonButton color={"success"}>
                   <IonText>
                     <h5>Worker</h5>
                   </IonText>
                 </IonButton>
               </IonCol>
-
+        
               <IonCol>
                 <IonAvatar>
                   <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />

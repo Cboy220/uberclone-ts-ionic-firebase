@@ -45,10 +45,14 @@ const Search: React.FC = () => {
         <IonGrid>
           <IonRow>
             <IonCol size="1">
-              <IonIcon icon={ellipsisHorizontalCircleOutline} size="small" />
+              <IonIcon
+                class="circle__ion__icon"
+                icon={ellipsisHorizontalCircleOutline}
+                size="small"
+              />
               <br />
               <IonImg
-                class="circle__ion__icon"
+                class="line__ion__icon"
                 src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655633562/FIXITAPP/nextjs-app-images/search/1539792897_qyla5f.svg"
               />
               <br />

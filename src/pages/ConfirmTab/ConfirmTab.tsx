@@ -10,9 +10,12 @@ import {
 } from "@ionic/react";
 import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ConfirmTab: React.FC = () => {
+  const [pickupCoordinates, setPickupCoordinates] = useState("");
+  const [dropOffCoordinates, setDropOffCoordinates] = useState("");
+
   //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
     const location = "Cairo";

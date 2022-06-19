@@ -63,11 +63,6 @@ const Home: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol>
-              <IonRouterOutlet>
-              <Route exact={true} path="/tabs/search" component={Search}/>
-
-              </IonRouterOutlet>
-
               <IonAvatar>
                   <IonImg  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
                 </IonAvatar>

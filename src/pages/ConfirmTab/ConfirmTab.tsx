@@ -13,6 +13,7 @@ import Map from "../../components/Map/Map";
 import { useEffect } from "react";
 
 const ConfirmTab: React.FC = () => {
+  //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
     const location = "Cairo";
     // Fetch Function
@@ -29,7 +30,9 @@ const ConfirmTab: React.FC = () => {
         console.log(data.features[0].center);
       });
   };
+  //get PickupCoordinates end
 
+  // get DropOffCoordinates Start
   const getDropOffCoordinates = () => {
     const dropOff = "Alexandria";
     // Fetch Function

@@ -40,29 +40,37 @@ const Search: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <IonGrid>
-        <IonIcon icon={addCircleOutline} size="large" slot="" />
+          <IonIcon icon={addCircleOutline} size="large" slot="" />
           <IonRow>
-            <IonInput placeholder="Where" class="search__ion__input" />
+            <IonInput
+              placeholder="Your home address"
+              class="search__ion__input"
+            />
           </IonRow>
-          <IonCol>
-            <IonList>
-              <IonIcon icon={ellipsisHorizontalCircleOutline} size="small" />
-              <br />
-              <IonImg
-                class="search__ion__line__icon"
-                src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655633562/FIXITAPP/nextjs-app-images/search/1539792897_qyla5f.svg"
-              />
-              <br />
-              <IonIcon
-                color={"success"}
-                icon={ellipsisHorizontalCircle}
-                size="small"
-              />
-            </IonList>
-          </IonCol>
+          <IonRow>
+            <IonCol>
+              <IonList>
+                <IonIcon icon={ellipsisHorizontalCircleOutline} size="small" />
+                <br />
+                <IonImg
+                  class="search__ion__line__icon"
+                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655633562/FIXITAPP/nextjs-app-images/search/1539792897_qyla5f.svg"
+                />
+                <br />
+                <IonIcon
+                  color={"success"}
+                  icon={ellipsisHorizontalCircle}
+                  size="small"
+                />
+              </IonList>
+            </IonCol>
+          </IonRow>
 
           <IonRow>
-            <IonInput placeholder="Go to" class="search__ion__input" />
+            <IonInput
+              placeholder="Workers location"
+              class="search__ion__input"
+            />
           </IonRow>
           <IonButton expand="block" color={"dark"}>
             Search

@@ -10,8 +10,8 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, search, square } from 'ionicons/icons';
-import Search from './pages/Tab1/Search';
+import { ellipse, home, search, square } from 'ionicons/icons';
+import Search from './pages/Tab1/Home';
 import Tab2 from './pages/Tab2/Tab2';
 import Tab3 from './pages/Tab3/Tab3';
 
@@ -36,6 +36,7 @@ import './theme/variables.scss';
 
 /**Mapbox-gl */
 import "mapbox-gl/dist/mapbox-gl.css"
+import Home from './pages/Tab1/Home';
 
 
 setupIonicReact();
@@ -46,7 +47,7 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/tab1">
-            <Search />
+            <Home />
           </Route>
           <Route exact path="/tab2">
             <Tab2 />
@@ -60,8 +61,8 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={search} />
-            <IonLabel>Search</IonLabel>
+            <IonIcon icon={home} />
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon icon={ellipse} />

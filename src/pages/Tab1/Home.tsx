@@ -7,21 +7,23 @@ import {
   IonGrid,
   IonHeader,
   IonImg,
+  IonInput,
+  IonItemDivider,
   IonPage,
   IonRow,
   IonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import "./Search.scss";
+import "./Home.scss";
 import Map from "../../components/Map/Map";
 
-const Search: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Search</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -61,7 +63,7 @@ const Search: React.FC = () => {
                 </IonAvatar>
                 <IonButton color={"success"}>
                   <IonText>
-                    <h5>Male Worker</h5>
+                    <h5>Worker</h5>
                   </IonText>
                 </IonButton>
               </IonCol>
@@ -76,6 +78,21 @@ const Search: React.FC = () => {
                   </IonText>
                 </IonButton>
               </IonCol>
+
+              <IonCol>
+                <IonAvatar>
+                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
+                </IonAvatar>
+                <IonButton color={"secondary"}>
+                  <IonText>
+                    <h5>Reserve</h5>
+                  </IonText>
+                </IonButton>
+              </IonCol>
+              <IonItemDivider />
+              <IonCol>
+                <IonInput placeholder="Whereto?" />
+              </IonCol>
             </IonRow>
           </IonGrid>
         </IonButtons>
@@ -87,4 +104,4 @@ const Search: React.FC = () => {
   );
 };
 
-export default Search;
+export default Home;

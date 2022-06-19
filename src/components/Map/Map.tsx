@@ -13,6 +13,17 @@ interface MapsProps {
 }
 
 const Map: React.FC<MapsProps> = ({ name }) => {
+  const addToMap = (map: any) => {
+    // Set marker options.
+    const marker = new mapboxgl.Marker({
+      color: "#568203",
+      draggable: true,
+    })
+      .setLngLat([26.8206, 30.8025])
+      .addTo(map);
+}
+
+
   useEffect(() => {
     const map = new mapboxgl.Map({
       //important id for the container insert into div
@@ -22,17 +33,9 @@ const Map: React.FC<MapsProps> = ({ name }) => {
       center: [26.8206, 30.8025],
       zoom: 3,
     });
+    addToMap(map)
   });
 
-const addToMap = (map: any) => {
-      // Set marker options.
-      const marker = new mapboxgl.Marker({
-        color: "#568203",
-        draggable: true,
-      })
-        .setLngLat([26.8206, 30.8025])
-        .addTo(map);
-}
 
 
 

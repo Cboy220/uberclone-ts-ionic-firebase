@@ -24,6 +24,7 @@ import {
   ellipsisHorizontalCircleOutline,
   linkOutline,
   listOutline,
+  star,
   tabletLandscape,
 } from "ionicons/icons";
 import ExploreContainer from "../../components/ExploreContainer/ExploreContainer";
@@ -76,6 +77,15 @@ const Search: React.FC = () => {
             </IonCol>
             <IonCol size="1">
               <IonIcon icon={addCircleOutline} class="add__ion__icon" />
+            </IonCol>
+            <IonCol>
+
+              <IonButton expand="block" color={"light"}>
+                <IonIcon
+                icon={star}
+                />
+                Saved Places
+              </IonButton>
             </IonCol>
           </IonRow>
           <IonButton expand="block" color={"dark"}>

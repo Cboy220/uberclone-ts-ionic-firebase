@@ -11,6 +11,7 @@ import {
   IonInput,
   IonItemDivider,
   IonPage,
+  IonRouterLink,
   IonRow,
   IonTitle,
   IonToolbar,
@@ -78,9 +79,12 @@ const SearchTab: React.FC = () => {
               </IonButton>
             </IonCol>
           </IonRow>
+          <IonRouterLink href="/tabs/confirm">
           <IonButton expand="block" color={"dark"}>
-            Search
+            Confirm worker reservation
           </IonButton>
+          </IonRouterLink>
+    
         </IonGrid>
       </IonContent>
     </IonPage>

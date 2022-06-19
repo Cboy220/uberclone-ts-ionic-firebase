@@ -62,7 +62,7 @@ const Home: React.FC = () => {
         <IonButtons slot="">
           <IonGrid>
             <IonRow>
-              <IonCol>
+              <IonCol size="4">
               <IonAvatar>
                   <IonImg  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
                 </IonAvatar>
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
                 </IonButton>
               </IonCol>
         
-              <IonCol>
+              <IonCol size="4">
                 <IonAvatar>
                   <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
                 </IonAvatar>
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                 </IonButton>
               </IonCol>
 
-              <IonCol>
+              <IonCol size="4">
                 <IonAvatar>
                   <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
                 </IonAvatar>

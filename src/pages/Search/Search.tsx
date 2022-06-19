@@ -9,6 +9,8 @@ import {
   IonIcon,
   IonImg,
   IonInput,
+  IonItem,
+  IonItemDivider,
   IonList,
   IonPage,
   IonRow,
@@ -38,39 +40,39 @@ const Search: React.FC = () => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
+      <IonItemDivider />
       <IonContent fullscreen>
         <IonGrid>
-          <IonIcon icon={addCircleOutline} size="large" slot="" />
           <IonRow>
-            <IonInput
-              placeholder="Your home address"
-              class="search__ion__input"
-            />
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <IonList>
-                <IonIcon icon={ellipsisHorizontalCircleOutline} size="small" />
-                <br />
-                <IonImg
-                  class="search__ion__line__icon"
-                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655633562/FIXITAPP/nextjs-app-images/search/1539792897_qyla5f.svg"
-                />
-                <br />
-                <IonIcon
-                  color={"success"}
-                  icon={ellipsisHorizontalCircle}
-                  size="small"
-                />
-              </IonList>
+            <IonCol size="1">
+              <IonIcon icon={ellipsisHorizontalCircleOutline} size="small" />
+              <br />
+              <IonImg
+                class="circle__ion__icon"
+                src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655633562/FIXITAPP/nextjs-app-images/search/1539792897_qyla5f.svg"
+              />
+              <br />
+              <IonIcon
+                icon={ellipsisHorizontalCircle}
+                size="small"
+                class="circle__ion__icon__success"
+              />
             </IonCol>
-          </IonRow>
 
-          <IonRow>
-            <IonInput
-              placeholder="Workers location"
-              class="search__ion__input"
-            />
+            <IonCol size="10">
+              <IonInput
+                placeholder="Your home address"
+                class="search__ion__input"
+              />
+
+              <IonInput
+                placeholder="Workers location"
+                class="search__ion__input"
+              />
+            </IonCol>
+            <IonCol size="1">
+              <IonIcon icon={addCircleOutline} class="add__ion__icon" />
+            </IonCol>
           </IonRow>
           <IonButton expand="block" color={"dark"}>
             Search

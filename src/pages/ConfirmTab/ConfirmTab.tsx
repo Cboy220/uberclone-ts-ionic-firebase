@@ -1,4 +1,6 @@
 import {
+  IonBackButton,
+  IonButtons,
   IonContent,
   IonGrid,
   IonHeader,
@@ -39,6 +41,9 @@ const ConfirmTab: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Confirm</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/tabs/search" />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

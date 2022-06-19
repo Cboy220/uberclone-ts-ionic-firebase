@@ -31,7 +31,7 @@ const SearchTab: React.FC = () => {
         <IonToolbar>
           <IonTitle>Search</IonTitle>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="home" />
+            <IonBackButton defaultHref="/tabs/home" />
           </IonButtons>
         </IonToolbar>
       </IonHeader>
@@ -80,11 +80,10 @@ const SearchTab: React.FC = () => {
             </IonCol>
           </IonRow>
           <IonRouterLink href="/tabs/confirm">
-          <IonButton expand="block" color={"dark"}>
-            Confirm worker reservation
-          </IonButton>
+            <IonButton expand="block" color={"dark"}>
+              Confirm worker reservation
+            </IonButton>
           </IonRouterLink>
-    
         </IonGrid>
       </IonContent>
     </IonPage>

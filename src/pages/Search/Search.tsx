@@ -79,11 +79,8 @@ const Search: React.FC = () => {
               <IonIcon icon={addCircleOutline} class="add__ion__icon" />
             </IonCol>
             <IonCol>
-
               <IonButton expand="block" color={"light"}>
-                <IonIcon
-                icon={star}
-                />
+                <IonIcon icon={star} />
                 Saved Places
               </IonButton>
             </IonCol>

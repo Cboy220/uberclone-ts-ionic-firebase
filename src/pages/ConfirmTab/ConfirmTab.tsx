@@ -14,10 +14,10 @@ const ConfirmTab: React.FC = () => {
   const getCoordiantes = () => {
     const location = "Cairo";
     // Fetch Function
-    const access_token = "access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g";
+    const access_token =
+      "access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g";
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?${access_token}`
-    
     )
       .then((response) => response.json())
       .then((data) => {

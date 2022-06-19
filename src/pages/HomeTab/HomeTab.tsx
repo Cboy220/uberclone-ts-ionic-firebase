@@ -15,7 +15,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import "./Home.scss";
+import "./HomeTab.scss";
 import Map from "../../components/Map/Map";
 
 const Home: React.FC = () => {

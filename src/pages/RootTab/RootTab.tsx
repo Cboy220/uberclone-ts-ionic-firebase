@@ -8,19 +8,19 @@ import {
   IonTabButton,
   IonTabs,
 } from "@ionic/react";
-import { search, map, personCircleOutline } from "ionicons/icons";
-import Search from "../Search/Search";
-import Home from "../HomeTab/Home";
-import Tab3 from "../Tab3/Tab3";
+import { search, map,checkmarkDone } from "ionicons/icons";
+import HomeTab from "../HomeTab/HomeTab";
+import SearchTab from "../SearchTab/SearchTab";
+import ConfirmTab from "../ConfirmTab/ConfirmTab";
 
 // import Tab1Detail from './Tab1Detail';
 
 const RootTab: React.FC = () => (
   <IonTabs>
     <IonRouterOutlet>
-      <Route path="/tabs/home" component={Home} exact={true} />
-      <Route path="/tabs/search" component={Search} exact={true} />
-      <Route path="/tabs/tab3" component={Tab3} />
+      <Route path="/tabs/home" component={HomeTab} exact={true} />
+      <Route path="/tabs/search" component={SearchTab} exact={true} />
+      <Route path="/tabs/confirm" component={ConfirmTab} exact={true} />
       <Route
         path="/tabs"
         render={() => <Redirect to="/tabs/home" />}
@@ -41,9 +41,9 @@ const RootTab: React.FC = () => (
         <IonIcon icon={search} />
         <IonLabel>Search</IonLabel>
       </IonTabButton>
-      <IonTabButton tab="tab3" href="/tabs/tab3">
-        <IonIcon icon={personCircleOutline} />
-        <IonLabel>Tab 3</IonLabel>
+      <IonTabButton tab="confirm" href="/tabs/confirm">
+        <IonIcon icon={checkmarkDone} />
+        <IonLabel>Confirm</IonLabel>
       </IonTabButton>
     </IonTabBar>
   </IonTabs>

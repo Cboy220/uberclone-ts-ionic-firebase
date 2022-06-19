@@ -9,9 +9,7 @@ import {
   IonIcon,
   IonImg,
   IonInput,
-  IonItem,
   IonItemDivider,
-  IonList,
   IonPage,
   IonRow,
   IonTitle,
@@ -19,18 +17,13 @@ import {
 } from "@ionic/react";
 import {
   addCircleOutline,
-  atCircle,
   ellipsisHorizontalCircle,
   ellipsisHorizontalCircleOutline,
-  linkOutline,
-  listOutline,
   star,
-  tabletLandscape,
 } from "ionicons/icons";
-import ExploreContainer from "../../components/ExploreContainer/ExploreContainer";
-import "./Search.scss";
+import "./SearchTab.scss";
 
-const Search: React.FC = () => {
+const SearchTab: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -94,4 +87,4 @@ const Search: React.FC = () => {
   );
 };
 
-export default Search;
+export default SearchTab;

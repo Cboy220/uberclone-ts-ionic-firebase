@@ -97,7 +97,7 @@ const Home: React.FC = () => {
               </IonCol>
               <IonItemDivider />
               <IonCol>
-                <IonInput placeholder="Whereto?" />
+               <IonButton href="/tabs/search" expand="block" color={"primary"}>Where to?</IonButton>
               </IonCol>
             </IonRow>
           </IonGrid>

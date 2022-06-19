@@ -9,6 +9,7 @@ import {
   IonImg,
   IonItemDivider,
   IonPage,
+  IonRouterLink,
   IonRow,
   IonText,
   IonTitle,
@@ -58,7 +59,7 @@ const Home: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol size="4">
-                <a href="/tabs/search">
+              <IonRouterLink href="/tabs/search">
                   <IonAvatar>
                     <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
                   </IonAvatar>
@@ -68,11 +69,11 @@ const Home: React.FC = () => {
                       <h5>Worker</h5>
                     </IonText>
                   </IonButton>
-                </a>
+                  </IonRouterLink>
               </IonCol>
 
               <IonCol size="4">
-                <a href="/tabs/search">
+              <IonRouterLink href="/tabs/search">
                   <IonAvatar>
                     <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
                   </IonAvatar>
@@ -81,10 +82,11 @@ const Home: React.FC = () => {
                       <h5>Profession</h5>
                     </IonText>
                   </IonButton>
-                </a>
+                  </IonRouterLink>
               </IonCol>
               <IonCol size="4">
-                <a href="/tabs/search">
+                <IonRouterLink href="/tabs/search">
+
                   <IonAvatar>
                     <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
                   </IonAvatar>
@@ -93,12 +95,13 @@ const Home: React.FC = () => {
                       <h5>Reserve</h5>
                     </IonText>
                   </IonButton>
-                </a>
+                  </IonRouterLink>
+
               </IonCol>
 
               <IonItemDivider />
               <IonCol>
-                <a href="/tabs/search">
+              <IonRouterLink href="/tabs/search">
                   <IonButton
                     href="/tabs/search"
                     expand="block"
@@ -106,7 +109,7 @@ const Home: React.FC = () => {
                   >
                     Where to?
                   </IonButton>
-                </a>
+                  </IonRouterLink>
               </IonCol>
             </IonRow>
           </IonGrid>

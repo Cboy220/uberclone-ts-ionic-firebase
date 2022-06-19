@@ -30,7 +30,7 @@ const ConfirmTab: React.FC = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setPickupCoordinates("Pick Up Coordinates:" + data.features[0].center);
+        setPickupCoordinates(data.features[0].center);
       });
   };
   //get PickupCoordinates end
@@ -49,12 +49,11 @@ const ConfirmTab: React.FC = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setDropOffCoordinates(
-          "Drop Off Coordinates:" + data.features[0].center
-        );
+        setDropOffCoordinates(data.features[0].center);
       });
   };
-
+  //debug useState
+  console.log(pickupCoordinates, dropOffCoordinates);
   //call functions with useEffect
 
   useEffect(() => {

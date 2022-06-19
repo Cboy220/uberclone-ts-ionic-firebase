@@ -28,16 +28,14 @@ const Search: React.FC = () => {
       <IonContent fullscreen>
         <IonGrid>
           <IonRow>
-            <IonInput placeholder="Where" />
+            <IonInput placeholder="Where" class="search__ion__input"/>
           </IonRow>
           <IonRow>
-            <IonInput placeholder="Go to" />
+            <IonInput placeholder="Go to"  class="search__ion__input" />
           </IonRow>
-          <IonRow>
             <IonButton expand="block" color={"dark"}>
               Search
             </IonButton>
-          </IonRow>
         </IonGrid>
       </IonContent>
     </IonPage>

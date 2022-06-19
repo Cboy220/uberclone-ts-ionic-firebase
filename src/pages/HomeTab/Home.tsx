@@ -7,10 +7,8 @@ import {
   IonGrid,
   IonHeader,
   IonImg,
-  IonInput,
   IonItemDivider,
   IonPage,
-  IonRouterOutlet,
   IonRow,
   IonText,
   IonTitle,
@@ -18,9 +16,6 @@ import {
 } from "@ionic/react";
 import "./Home.scss";
 import Map from "../../components/Map/Map";
-import { IonReactRouter } from "@ionic/react-router";
-import Search from "../Search/Search";
-import { Route } from "react-router";
 
 const Home: React.FC = () => {
   return (
@@ -63,43 +58,55 @@ const Home: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol size="4">
-                <IonAvatar>
-                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
-                </IonAvatar>
+                <a href="/tabs/search">
+                  <IonAvatar>
+                    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
+                  </IonAvatar>
 
-                <IonButton href="/tabs/search" color={"success"}>
-                  <IonText>
-                    <h5>Worker</h5>
-                  </IonText>
-                </IonButton>
+                  <IonButton href="/tabs/search" color={"success"}>
+                    <IonText>
+                      <h5>Worker</h5>
+                    </IonText>
+                  </IonButton>
+                </a>
               </IonCol>
 
               <IonCol size="4">
-                <IonAvatar>
-                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
-                </IonAvatar>
-                <IonButton color={"secondary"}>
-                  <IonText>
-                    <h5>Profession</h5>
-                  </IonText>
-                </IonButton>
+                <a href="/tabs/search">
+                  <IonAvatar>
+                    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
+                  </IonAvatar>
+                  <IonButton color={"secondary"}>
+                    <IonText>
+                      <h5>Profession</h5>
+                    </IonText>
+                  </IonButton>
+                </a>
+              </IonCol>
+              <IonCol size="4">
+                <a href="/tabs/search">
+                  <IonAvatar>
+                    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
+                  </IonAvatar>
+                  <IonButton color={"secondary"}>
+                    <IonText>
+                      <h5>Reserve</h5>
+                    </IonText>
+                  </IonButton>
+                </a>
               </IonCol>
 
-              <IonCol size="4">
-                <IonAvatar>
-                  <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
-                </IonAvatar>
-                <IonButton color={"secondary"}>
-                  <IonText>
-                    <h5>Reserve</h5>
-                  </IonText>
-                </IonButton>
-              </IonCol>
               <IonItemDivider />
               <IonCol>
-                <IonButton href="/tabs/search" expand="block" color={"primary"}>
-                  Where to?
-                </IonButton>
+                <a href="/tabs/search">
+                  <IonButton
+                    href="/tabs/search"
+                    expand="block"
+                    color={"primary"}
+                  >
+                    Where to?
+                  </IonButton>
+                </a>
               </IonCol>
             </IonRow>
           </IonGrid>

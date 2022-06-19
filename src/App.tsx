@@ -10,9 +10,9 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, home, search, square } from 'ionicons/icons';
-import Search from './pages/Tab1/Home';
-import Tab2 from './pages/Tab2/Tab2';
+import { home, search, square } from 'ionicons/icons';
+import Home from './pages/HomeTab/Home';
+import Search from './pages/HomeTab/Home';
 import Tab3 from './pages/Tab3/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
@@ -36,7 +36,7 @@ import './theme/variables.scss';
 
 /**Mapbox-gl */
 import "mapbox-gl/dist/mapbox-gl.css"
-import Home from './pages/Tab1/Home';
+import RootTab from './pages/RootTab/RootTab';
 
 
 setupIonicReact();
@@ -44,36 +44,20 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Home />
-          </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
-          </Route>
-          <Route path="/tab3">
-            <Tab3 />
-          </Route>
+          <Route exact={true} path="/home" component={Home}/>
+
+          <Route exact={true} path="/search" component={Search}/>
+     
+          <Route exact={true} path="/tab3"  component={Tab3}/>
+     
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/home" />
           </Route>
+          <Route path="/tabs" component={RootTab}/>
+        <Route exact={true} path="/" render={()=><Redirect to="/tabs/home" />}/>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={home} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
+      
     </IonReactRouter>
   </IonApp>
 );

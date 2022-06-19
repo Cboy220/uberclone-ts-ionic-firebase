@@ -41,7 +41,6 @@ const RootTab: React.FC = () => (
         <IonIcon icon={search} />
         <IonLabel>Search</IonLabel>
       </IonTabButton>
-
       <IonTabButton tab="tab3" href="/tabs/tab3">
         <IonIcon icon={personCircleOutline} />
         <IonLabel>Tab 3</IonLabel>

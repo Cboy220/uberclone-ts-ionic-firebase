@@ -31,29 +31,20 @@ const Search: React.FC = () => {
       <IonContent fullscreen>
         <IonGrid>
           <IonRow>
-            <IonInput placeholder="Where" class="search__ion__input"/>
-        
-         
+            <IonInput placeholder="Where" class="search__ion__input" />
           </IonRow>
-          
-      <IonRow className="ion-items-self-end">
-        <IonCol  offset="10" size-lg>
-        <IonIcon
-             icon={addCircleOutline}
-             size="large"
 
-             />
-        </IonCol>
-    
-      </IonRow>
-
-      
+          <IonRow className="ion-items-self-end">
+            <IonCol offset="10" size-lg>
+              <IonIcon icon={addCircleOutline} size="large" />
+            </IonCol>
+          </IonRow>
           <IonRow>
-            <IonInput placeholder="Go to"  class="search__ion__input" />
+            <IonInput placeholder="Go to" class="search__ion__input" />
           </IonRow>
-            <IonButton expand="block" color={"dark"}>
-              Search
-            </IonButton>
+          <IonButton expand="block" color={"dark"}>
+            Search
+          </IonButton>
         </IonGrid>
       </IonContent>
     </IonPage>

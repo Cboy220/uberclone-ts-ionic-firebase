@@ -13,6 +13,15 @@ import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
 
 
+interface MapsProps {
+  name: string;
+  dropOffCoordinates: string;
+  pickupCoordinates: string;
+}
+
+
+
+
 
 const ConfirmTab: React.FC = (props) => {
   const [pickupCoordinates, setPickupCoordinates] = useState("");
@@ -80,12 +89,8 @@ const ConfirmTab: React.FC = (props) => {
             <IonTitle size="large">Confirm</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Map name={"map"} 
-
-        >
-          {pickupCoordinates}
-        {dropOffCoordinates}
-        </Map>
+        <Map name={"map"} dropOffCoordinates={dropOffCoordinates} pickupCoordinates={pickupCoordinates} />
+        
         <IonGrid>
           {/**Worker Selector */}
 

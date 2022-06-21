@@ -10,12 +10,13 @@ mapboxgl.accessToken =
 
 //import passed map id
 interface MapsProps {
-
   name: string;
-  
- 
- 
+  dropOffCoordinates: string;
+  pickupCoordinates: string;
 }
+
+
+
 
 const Map: React.FC<MapsProps> = (props, { name }) => {
   console.log(props);
@@ -41,19 +42,12 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     addToMap(map);
   });
 
+  // Drop Off Coordinates
+  useEffect(() => {
+    console.log(props);
+  }, [props.pickupCoordinates,]);
 
-// Drop Off Coordinates 
-useEffect(()=>{
-console.log(props)
-}, [])
-
-
-// Pick Up Coordinates 
-
-
-
-
-
+  // Pick Up Coordinates
 
   return (
     <div

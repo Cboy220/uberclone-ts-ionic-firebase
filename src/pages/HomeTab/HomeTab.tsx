@@ -18,7 +18,16 @@ import {
 import "./HomeTab.scss";
 import Map from "../../components/Map/Map";
 
-const HomeTab: React.FC = () => {
+
+interface MapsProps {
+  name: string;
+  dropOffCoordinates: string;
+  pickupCoordinates: string;
+}
+
+
+
+const HomeTab: React.FC<MapsProps> = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -27,7 +36,7 @@ const HomeTab: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <Map name="Map" />
+        <Map name={"map"} dropOffCoordinates={""} pickupCoordinates={""} />
         {/**Header */}
 
         <IonGrid>

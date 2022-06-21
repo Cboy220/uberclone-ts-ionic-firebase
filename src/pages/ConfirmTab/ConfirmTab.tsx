@@ -16,14 +16,13 @@ import { useRouter } from "../../utilities/useRouter/useRouter";
 
 interface MapsProps {
   name: string;
-  dropOffCoordinates: string;
-  pickupCoordinates: string;
 }
 
 const ConfirmTab: React.FC<MapsProps> = (props, { pickup, dropoff }) => {
   const router = useRouter();
   //debug router
   console.log(router);
+
   //debug props
   //console.log(props);
 

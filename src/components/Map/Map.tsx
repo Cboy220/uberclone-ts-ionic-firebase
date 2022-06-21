@@ -10,7 +10,9 @@ mapboxgl.accessToken =
 
 //import passed map id
 interface MapsProps {
+
   name: string;
+ 
 }
 
 const Map: React.FC<MapsProps> = (props, { name }) => {

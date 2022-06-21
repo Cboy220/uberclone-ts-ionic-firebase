@@ -18,7 +18,7 @@ interface MapsProps {
   name: string;
 }
 
-const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
+const ConfirmTab: React.FC<MapsProps> = (props) => {
   //Defined router from utils
   const router = useRouter();
   // used query here as a string with window & @@params
@@ -27,7 +27,7 @@ const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
   // Get the drop off and pickup
   const dropoff = urlParams.get("dropoff");
   const pickUp = urlParams.get("pickup");
-  // Debug the drop off and pickup
+  // Debug the drop off and
   console.log("PickUp:", pickUp);
   console.log("DropOff:", dropoff);
 
@@ -42,11 +42,10 @@ const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
 
   //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
-    const location = "Cairo";
     // Fetch Function
 
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?` +
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?` +
         new URLSearchParams({
           access_token:
             "pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g",
@@ -61,10 +60,9 @@ const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
 
   // get DropOffCoordinates Start
   const getDropOffCoordinates = () => {
-    const dropOff = "Alexandria";
     // Fetch Function
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropOff}.json?` +
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
         new URLSearchParams({
           access_token:
             "pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g",
@@ -82,7 +80,7 @@ const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
   useEffect(() => {
     getPickUpCoordinates();
     getDropOffCoordinates();
-  }, []);
+  }, [pickUp, dropoff]);
 
   return (
     <IonPage>

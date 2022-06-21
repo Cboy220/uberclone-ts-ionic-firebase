@@ -15,23 +15,11 @@ interface MapsProps {
   pickupCoordinates: string;
 }
 
-
-
-
 const Map: React.FC<MapsProps> = (props, { name }) => {
   //debug props
- // console.log(props);
+  // console.log(props);
 
-  const addToMap = (map: any) => {
-    // Set marker options.
-    const marker = new mapboxgl.Marker({
-      color: "#568203",
-      draggable: true,
-    })
-      .setLngLat([26.8206, 30.8025])
-      .addTo(map);
-  };
-
+  //initializes map
   useEffect(() => {
     const map = new mapboxgl.Map({
       //important id for the container insert into div
@@ -41,12 +29,26 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
       center: [26.8206, 30.8025],
       zoom: 3,
     });
-    addToMap(map);
-  });
+    if (props.pickupCoordinates) {
+      addToMap(map, props.pickupCoordinates);
+    }
+  }, [props.pickupCoordinates, props.dropOffCoordinates]);
+
+  const addToMap = (map: any, coordinates: any) => {
+    // Set marker options.
+    const marker = new mapboxgl.Marker({
+      color: "#568203",
+      draggable: true,
+    })
+      .setLngLat(coordinates)
+      .addTo(map);
+  };
 
   // Drop Off Coordinates
   useEffect(() => {
     console.log(props);
+    console.log(props.pickupCoordinates);
+    console.log(props.dropOffCoordinates);
   }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
   // Pick Up Coordinates

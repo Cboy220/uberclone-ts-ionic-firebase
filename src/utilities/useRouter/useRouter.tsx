@@ -2,7 +2,12 @@ import { useContext } from "react";
 import { RouteComponentProps } from "react-router";
 import { __RouterContext } from "react-router";
 
-export const useRouter = <TParams extends object = {}>() => {
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const code = urlParams.get('code')
+
+export const useRouter = <TParams extends object = {queryString: any}>() => {
   return useContext(__RouterContext) as RouteComponentProps<TParams>;
 };
 

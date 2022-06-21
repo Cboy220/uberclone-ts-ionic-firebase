@@ -18,7 +18,7 @@ interface MapsProps {
   name: string;
 }
 
-const ConfirmTab: React.FC<MapsProps> = (props, { pickup, dropoff }) => {
+const ConfirmTab: React.FC<MapsProps> = (props) => {
   const router = useRouter();
   //debug router
   console.log(router);

@@ -30,13 +30,9 @@ import { Link } from "react-router-dom";
 
 interface MapsProps {
   name: string;
-  dropOffCoordinates: string;
-  pickupCoordinates: string;
-  pickup: string;
-  dropoff: string;
 }
 
-const SearchTab: React.FC<MapsProps> = (props, { pickup, dropoff }) => {
+const SearchTab: React.FC<MapsProps> = (props) => {
   //debug router
   const router = useRouter();
   console.log(router);

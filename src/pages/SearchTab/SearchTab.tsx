@@ -24,7 +24,17 @@ import {
 } from "ionicons/icons";
 import "./SearchTab.scss";
 
-const SearchTab: React.FC = () => {
+import { Link, Route, useParams } from "react-router-dom";
+
+
+interface SearchProps{
+  query: {
+    pickup: "Cairo",
+    dropoff: "Alexandria",
+  }
+}
+
+const SearchTab: React.FC<SearchProps> = (props) => {
   return (
     <IonPage>
       <IonHeader>
@@ -84,6 +94,11 @@ const SearchTab: React.FC = () => {
               Confirm worker reservation
             </IonButton>
           </IonRouterLink>
+
+          <Link to={{
+  pathname: '/tabs/confirm',
+}}>Confirm with Link react-router-dom</Link>
+
         </IonGrid>
       </IonContent>
     </IonPage>

@@ -5,6 +5,7 @@ import {
   IonGrid,
   IonHeader,
   IonPage,
+  IonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -90,6 +91,18 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
           dropOffCoordinates={dropOffCoordinates}
           pickupCoordinates={pickupCoordinates}
         />
+        <IonText>
+          <p>
+            {" "}
+            Drop Off Coordinates
+            <br />
+            {dropOffCoordinates}
+          </p>
+          <p>
+            PickupCoordinates <br />
+            {pickupCoordinates}
+          </p>
+        </IonText>
 
         <IonGrid>
           {/**Worker Selector */}

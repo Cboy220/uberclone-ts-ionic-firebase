@@ -19,6 +19,7 @@ import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
 //
 import { useRouter } from "../../utilities/useRouter/useRouter";
+import WorkerSelector from "../../components/WorkerSelector/WorkerSelector";
 
 interface MapsProps {
   name: string;
@@ -112,20 +113,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
 
         <IonGrid>
           {/**Worker Selector */}
-          Worker Selector
-          <IonList>
-            <IonItem>
-              <IonLabel>Workers available</IonLabel>
-              <IonSelect>
-                <IonSelectOption value={"Plumber"}>Plumber</IonSelectOption>
-                <IonSelectOption value={"Carpenter"}>Carpenter</IonSelectOption>
-                <IonSelectOption value={"Electrician"}>
-                  Electrician
-                </IonSelectOption>
-                <IonSelectOption value={"Cable"}>Cable</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </IonList>
+          <WorkerSelector />
           {/**Confirm Button */}
           <IonButton expand="block" color={"dark"}>
             Confirm Worker Reservation

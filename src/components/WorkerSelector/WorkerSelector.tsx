@@ -25,7 +25,7 @@ const WorkerSelector: React.FC = () => {
           </IonAvatar>
           <IonText slot="start">
             <p>Electrician</p>
-            <small color={"success"}>15 mins away</small>
+            <small className="worker__time">15 mins away</small>
           </IonText>
 
           <IonText slot="end">

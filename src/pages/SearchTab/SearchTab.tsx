@@ -26,12 +26,11 @@ import "./SearchTab.scss";
 
 import { Link, Route, useParams } from "react-router-dom";
 
-
-interface SearchProps{
+interface SearchProps {
   query: {
-    pickup: "Cairo",
-    dropoff: "Alexandria",
-  }
+    pickup: "Cairo";
+    dropoff: "Alexandria";
+  };
 }
 
 const SearchTab: React.FC<SearchProps> = (props) => {
@@ -95,10 +94,13 @@ const SearchTab: React.FC<SearchProps> = (props) => {
             </IonButton>
           </IonRouterLink>
 
-          <Link to={{
-  pathname: '/tabs/confirm',
-}}>Confirm with Link react-router-dom</Link>
-
+          <Link
+            to={{
+              pathname: "/tabs/confirm",
+            }}
+          >
+            Confirm with Link react-router-dom
+          </Link>
         </IonGrid>
       </IonContent>
     </IonPage>

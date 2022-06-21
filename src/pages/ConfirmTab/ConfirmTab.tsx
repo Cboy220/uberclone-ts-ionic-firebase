@@ -12,20 +12,16 @@ import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
 //
-import {useRouter} from "../../utilities/useRouter/useRouter"
+import { useRouter } from "../../utilities/useRouter/useRouter";
 
 interface MapsProps {
   name: string;
   dropOffCoordinates: string;
   pickupCoordinates: string;
- 
 }
 
-const ConfirmTab: React.FC<MapsProps> = (props,{pickup,dropoff}) => {
-const router = useRouter();
-
-
-
+const ConfirmTab: React.FC<MapsProps> = (props, { pickup, dropoff }) => {
+  const router = useRouter();
 
   //debug props
   //console.log(props);
@@ -98,7 +94,6 @@ const router = useRouter();
           dropOffCoordinates={dropOffCoordinates}
           pickupCoordinates={pickupCoordinates}
         />
-      
 
         <IonGrid>
           {/**Worker Selector */}

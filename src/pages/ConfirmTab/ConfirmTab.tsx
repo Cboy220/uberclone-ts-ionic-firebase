@@ -19,11 +19,15 @@ interface MapsProps {
 }
 
 const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
+  //Defined router from utils
   const router = useRouter();
+  // used query here as a string with window & @@params
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
+  // Get the drop off and pickup
   const dropoff = urlParams.get("dropoff");
   const pickUp = urlParams.get("pickup");
+  // Debug the drop off and pickup
   console.log("PickUp:", pickUp);
   console.log("DropOff:", dropoff);
 

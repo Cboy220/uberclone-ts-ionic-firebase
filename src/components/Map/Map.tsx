@@ -12,6 +12,8 @@ mapboxgl.accessToken =
 interface MapsProps {
 
   name: string;
+  
+ 
  
 }
 
@@ -41,7 +43,9 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
 
 
 // Drop Off Coordinates 
-
+useEffect(()=>{
+console.log(props)
+}, [])
 
 
 // Pick Up Coordinates 

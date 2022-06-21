@@ -17,7 +17,7 @@ interface MapsProps {
 
 const Map: React.FC<MapsProps> = (props, { name }) => {
   //debug props
-  // console.log(props);
+ console.log(props);
 
   //initializes map
   useEffect(() => {

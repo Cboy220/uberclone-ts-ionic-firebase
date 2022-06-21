@@ -24,16 +24,16 @@ import {
 } from "ionicons/icons";
 import "./SearchTab.scss";
 
-import { Link, Route, useParams } from "react-router-dom";
+import { useState } from "react";
 
-interface SearchProps {
-  query: {
-    pickup: "Cairo";
-    dropoff: "Alexandria";
-  };
-}
+import { Link } from "react-router-dom";
 
-const SearchTab: React.FC<SearchProps> = (props) => {
+const SearchTab: React.FC = () => {
+  const [homeAddrrQuery, setHomeAddrQuery] = useState("");
+  const [workerAddrrQuery, setWorkerAddrQuery] = useState("");
+  console.log(homeAddrrQuery,workerAddrrQuery);
+  console.log(setHomeAddrQuery,setWorkerAddrQuery);
+
   return (
     <IonPage>
       <IonHeader>
@@ -71,11 +71,19 @@ const SearchTab: React.FC<SearchProps> = (props) => {
               <IonInput
                 placeholder="Your home address"
                 class="search__ion__input"
+                value={homeAddrrQuery}
+                onIonChange={(event: any) =>
+                  setHomeAddrQuery(event.detail.value!)
+                }
               />
 
               <IonInput
                 placeholder="Workers location"
                 class="search__ion__input"
+                value={workerAddrrQuery}
+                onIonChange={(event: any) =>
+                  setWorkerAddrQuery(event.detail.value!)
+                }
               />
             </IonCol>
             <IonCol size="1">
@@ -88,18 +96,21 @@ const SearchTab: React.FC<SearchProps> = (props) => {
               </IonButton>
             </IonCol>
           </IonRow>
-          <IonRouterLink href="/tabs/confirm">
-            <IonButton expand="block" color={"dark"}>
-              Confirm worker reservation
-            </IonButton>
-          </IonRouterLink>
 
           <Link
             to={{
-              pathname: "/tabs/confirm",
+              pathname: `/tabs/confirm?pickup=${homeAddrrQuery}&dropoff=${workerAddrrQuery}`,
+              state: {
+                query: {
+                  pickup: `${homeAddrrQuery}`,
+                  dropoff: `${workerAddrrQuery}`,
+                },
+              },
             }}
           >
-            Confirm with Link react-router-dom
+            <IonButton expand="block" color={"dark"}>
+              Confirm worker reservation
+            </IonButton>
           </Link>
         </IonGrid>
       </IonContent>

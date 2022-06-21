@@ -17,7 +17,7 @@ interface MapsProps {
 
 const Map: React.FC<MapsProps> = (props, { name }) => {
   //debug props
- console.log(props);
+  // console.log(props);
 
   //initializes map
   useEffect(() => {
@@ -36,9 +36,6 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
       addToMap(map, props.dropOffCoordinates);
     }
     if (props.pickupCoordinates && props.dropOffCoordinates) {
-      map.fitBounds([props.dropOffCoordinates, props.pickupCoordinates]);
-    }
-    if (props.pickupCoordinates && props.dropOffCoordinates) {
       map.fitBounds([props.dropOffCoordinates, props.pickupCoordinates, {}], {
         padding: 50,
       });
@@ -55,14 +52,15 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
       .addTo(map);
   };
 
-  // Drop Off Coordinates
+  // Pick Up & Drop Off Coordinates useEffect Displays props
   useEffect(() => {
-    console.log(props);
-    console.log(props.pickupCoordinates);
-    console.log(props.dropOffCoordinates);
+    /*debug code */
+    //console.log(props);
+    //console.log(props.pickupCoordinates);
+    //console.log(props.dropOffCoordinates);
   }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
-  // Pick Up Coordinates
+  // 
 
   return (
     <div

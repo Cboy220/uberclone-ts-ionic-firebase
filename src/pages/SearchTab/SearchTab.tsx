@@ -24,10 +24,32 @@ import {
 import "./SearchTab.scss";
 
 import { useState } from "react";
+import {useRouter} from "../../utilities/useRouter/useRouter"
 
 import { Link } from "react-router-dom";
 
-const SearchTab: React.FC = () => {
+interface MapsProps {
+  name: string;
+  dropOffCoordinates: string;
+  pickupCoordinates: string;
+  pickup: string;
+  dropoff: string;
+
+}
+
+const SearchTab: React.FC< MapsProps> = (props,{pickup,dropoff}) => {
+  //debug router
+  const router = useRouter();
+  console.log(router)
+
+  //debug props
+  //console.log(props);
+  
+//parse 
+//console.log(pickup,dropoff)
+
+
+
   const [homeAddrrQuery, setHomeAddrQuery] = useState("");
   const [workerAddrrQuery, setWorkerAddrQuery] = useState("");
 

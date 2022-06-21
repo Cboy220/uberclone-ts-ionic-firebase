@@ -7,7 +7,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const code = urlParams.get('code')
 
-export const useRouter = <TParams extends object = {queryString: any}>() => {
+export const useRouter = <TParams extends object = {queryString: any, pickup:any, dropoff:any;}>() => {
   return useContext(__RouterContext) as RouteComponentProps<TParams>;
 };
 

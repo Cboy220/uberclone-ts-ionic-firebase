@@ -16,12 +16,18 @@ import { useRouter } from "../../utilities/useRouter/useRouter";
 
 interface MapsProps {
   name: string;
-  pickup: string;
-  dropoff: any;
 }
 
-const ConfirmTab: React.FC<MapsProps> = (props) => {
+const ConfirmTab: React.FC<MapsProps> = (props, {}) => {
   const router = useRouter();
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const dropoff = urlParams.get("dropoff");
+  const pickUp = urlParams.get("pickup");
+  console.log("PickUp:", pickUp);
+  console.log("DropOff:", dropoff);
+
+  //debug router
   console.log(router);
 
   //debug props
@@ -98,7 +104,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
 
         <IonGrid>
           {/**Worker Selector */}
-Worker Selector
+          Worker Selector
           {/**Confirm Button */}
           Confirm Button
         </IonGrid>

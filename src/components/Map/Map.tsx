@@ -32,6 +32,9 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     if (props.pickupCoordinates) {
       addToMap(map, props.pickupCoordinates);
     }
+    if (props.dropOffCoordinates) {
+      addToMap(map, props.dropOffCoordinates);
+    }
   }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
   const addToMap = (map: any, coordinates: any) => {

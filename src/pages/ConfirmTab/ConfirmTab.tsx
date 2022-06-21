@@ -80,8 +80,10 @@ const ConfirmTab: React.FC = (props) => {
             <IonTitle size="large">Confirm</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Map name={"map"} >
-        {pickupCoordinates}
+        <Map name={"map"} 
+
+        >
+          {pickupCoordinates}
         {dropOffCoordinates}
         </Map>
         <IonGrid>

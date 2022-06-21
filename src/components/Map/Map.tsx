@@ -35,6 +35,14 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     if (props.dropOffCoordinates) {
       addToMap(map, props.dropOffCoordinates);
     }
+    if (props.pickupCoordinates && props.dropOffCoordinates) {
+      map.fitBounds([props.dropOffCoordinates, props.pickupCoordinates]);
+    }
+    if (props.pickupCoordinates && props.dropOffCoordinates) {
+      map.fitBounds([props.dropOffCoordinates, props.pickupCoordinates, {}], {
+        padding: 50,
+      });
+    }
   }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
   const addToMap = (map: any, coordinates: any) => {

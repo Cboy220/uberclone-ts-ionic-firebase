@@ -19,7 +19,9 @@ interface MapsProps {
 
 
 const Map: React.FC<MapsProps> = (props, { name }) => {
-  console.log(props);
+  //debug props
+ // console.log(props);
+
   const addToMap = (map: any) => {
     // Set marker options.
     const marker = new mapboxgl.Marker({
@@ -45,7 +47,7 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
   // Drop Off Coordinates
   useEffect(() => {
     console.log(props);
-  }, [props.pickupCoordinates,]);
+  }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
   // Pick Up Coordinates
 

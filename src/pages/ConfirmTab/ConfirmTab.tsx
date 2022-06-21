@@ -12,23 +12,19 @@ import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
 
-
 interface MapsProps {
   name: string;
   dropOffCoordinates: string;
   pickupCoordinates: string;
 }
 
+const ConfirmTab: React.FC<MapsProps> = (props) => {
+  //debug props
+  //console.log(props);
 
-
-
-
-const ConfirmTab: React.FC = (props) => {
   const [pickupCoordinates, setPickupCoordinates] = useState("");
   const [dropOffCoordinates, setDropOffCoordinates] = useState("");
 
-  //
-  console.log(props);
   //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
     const location = "Cairo";
@@ -89,8 +85,12 @@ const ConfirmTab: React.FC = (props) => {
             <IonTitle size="large">Confirm</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Map name={"map"} dropOffCoordinates={dropOffCoordinates} pickupCoordinates={pickupCoordinates} />
-        
+        <Map
+          name={"map"}
+          dropOffCoordinates={dropOffCoordinates}
+          pickupCoordinates={pickupCoordinates}
+        />
+
         <IonGrid>
           {/**Worker Selector */}
 

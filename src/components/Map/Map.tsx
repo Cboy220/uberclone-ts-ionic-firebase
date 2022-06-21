@@ -8,11 +8,13 @@ const mapboxgl = require("mapbox-gl");
 mapboxgl.accessToken =
   "pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g";
 
+//import passed map id
 interface MapsProps {
   name: string;
 }
 
-const Map: React.FC<MapsProps> = ({ name }) => {
+const Map: React.FC<MapsProps> = (props, { name }) => {
+  console.log(props);
   const addToMap = (map: any) => {
     // Set marker options.
     const marker = new mapboxgl.Marker({
@@ -21,8 +23,7 @@ const Map: React.FC<MapsProps> = ({ name }) => {
     })
       .setLngLat([26.8206, 30.8025])
       .addTo(map);
-}
-
+  };
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -33,12 +34,8 @@ const Map: React.FC<MapsProps> = ({ name }) => {
       center: [26.8206, 30.8025],
       zoom: 3,
     });
-    addToMap(map)
+    addToMap(map);
   });
-
-
-
-
 
   return (
     <div

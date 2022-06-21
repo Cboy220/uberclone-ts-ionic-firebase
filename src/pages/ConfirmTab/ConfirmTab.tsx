@@ -12,15 +12,17 @@ import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
 
-const ConfirmTab: React.FC = () => {
+const ConfirmTab: React.FC = (props) => {
   const [pickupCoordinates, setPickupCoordinates] = useState("");
   const [dropOffCoordinates, setDropOffCoordinates] = useState("");
 
+  //
+  console.log(props);
   //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
     const location = "Cairo";
     // Fetch Function
-    const access_token = "access_token=";
+
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?` +
         new URLSearchParams({
@@ -39,7 +41,6 @@ const ConfirmTab: React.FC = () => {
   const getDropOffCoordinates = () => {
     const dropOff = "Alexandria";
     // Fetch Function
-    const access_token = "access_token=";
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropOff}.json?` +
         new URLSearchParams({
@@ -53,7 +54,7 @@ const ConfirmTab: React.FC = () => {
       });
   };
   //debug useState
-  console.log(pickupCoordinates, dropOffCoordinates);
+  //console.log(pickupCoordinates, dropOffCoordinates);
   //call functions with useEffect
 
   useEffect(() => {
@@ -77,7 +78,10 @@ const ConfirmTab: React.FC = () => {
             <IonTitle size="large">Confirm</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Map name={"map"} />
+        <Map name={"map"}>
+          {pickupCoordinates}
+          {dropOffCoordinates}
+        </Map>
         <IonGrid>
           {/**Worker Selector */}
 

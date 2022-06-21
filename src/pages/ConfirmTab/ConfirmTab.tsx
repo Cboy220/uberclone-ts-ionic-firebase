@@ -22,11 +22,10 @@ interface MapsProps {
 
 const ConfirmTab: React.FC<MapsProps> = (props, { pickup, dropoff }) => {
   const router = useRouter();
-//debug router 
-console.log(router);
+  //debug router
+  console.log(router);
   //debug props
   //console.log(props);
-
 
   const [pickupCoordinates, setPickupCoordinates] = useState("");
   const [dropOffCoordinates, setDropOffCoordinates] = useState("");

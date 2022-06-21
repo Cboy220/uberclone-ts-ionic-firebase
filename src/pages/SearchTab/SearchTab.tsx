@@ -11,7 +11,6 @@ import {
   IonInput,
   IonItemDivider,
   IonPage,
-  IonRouterLink,
   IonRow,
   IonTitle,
   IonToolbar,
@@ -31,8 +30,10 @@ import { Link } from "react-router-dom";
 const SearchTab: React.FC = () => {
   const [homeAddrrQuery, setHomeAddrQuery] = useState("");
   const [workerAddrrQuery, setWorkerAddrQuery] = useState("");
-  console.log(homeAddrrQuery,workerAddrrQuery);
-  console.log(setHomeAddrQuery,setWorkerAddrQuery);
+
+  //console.log(homeAddrrQuery,workerAddrrQuery);
+  console.log(setHomeAddrQuery);
+  console.log(setWorkerAddrQuery);
 
   return (
     <IonPage>

@@ -5,23 +5,27 @@ import {
   IonGrid,
   IonHeader,
   IonPage,
-  IonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 interface MapsProps {
   name: string;
   dropOffCoordinates: string;
   pickupCoordinates: string;
+  pickup: string;
+  dropoff: string;
+
+
 }
 
 const ConfirmTab: React.FC<MapsProps> = (props) => {
   //debug props
-  //console.log(props);
+  console.log(props);
 
   const [pickupCoordinates, setPickupCoordinates] = useState("");
   const [dropOffCoordinates, setDropOffCoordinates] = useState("");
@@ -91,8 +95,9 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
           dropOffCoordinates={dropOffCoordinates}
           pickupCoordinates={pickupCoordinates}
         />
-      
-
+<Router>
+  <Route path="/tabs/confirm"/>
+</Router>
         <IonGrid>
           {/**Worker Selector */}
 

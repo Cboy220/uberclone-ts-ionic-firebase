@@ -60,7 +60,7 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     //console.log(props.dropOffCoordinates);
   }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
-  // 
+  //
 
   return (
     <div

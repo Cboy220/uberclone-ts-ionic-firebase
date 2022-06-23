@@ -89,10 +89,10 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
   useEffect(() => {
     getPickUpCoordinates();
     getDropOffCoordinates();
-    console.log(pickUp,dropoff);
-    return (()=>{
-      <IonRefresherContent></IonRefresherContent>
-    })
+    console.log(pickUp, dropoff);
+    return () => {
+      <IonRefresherContent></IonRefresherContent>;
+    };
   }, [pickUp, dropoff]);
 
   return (

@@ -36,25 +36,23 @@ const WorkerSelector: React.FC = () => {
 
       <IonItemDivider />
 
-{workerList.map((worker,index)=>(
-  <IonItem key={index}>
-  <IonAvatar slot="start">
-    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655851971/FIXITAPP/ionic-app-images/WorkerSelector/electrician-svgrepo-com_w1mh7o.svg" />
-  </IonAvatar>
-  <IonText slot="start">
-    <p>Electrician</p>
-    <small className="worker__time">15 mins away</small>
-  </IonText>
+      {workerList.map((worker, index) => (
+        <IonItem key={index}>
+          <IonAvatar slot="start">
+            <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655851971/FIXITAPP/ionic-app-images/WorkerSelector/electrician-svgrepo-com_w1mh7o.svg" />
+          </IonAvatar>
+          <IonText slot="start">
+            <p>{worker.service}</p>
+            <small className="worker__time">15 mins away</small>
+          </IonText>
 
-  <IonText slot="end">
-    <p> Price $ </p>
-  </IonText>
-</IonItem>
-))}
+          <IonText slot="end">
+            <p> Price $ </p>
+          </IonText>
+        </IonItem>
+      ))}
 
-
-
-<IonItemDivider />
+      <IonItemDivider />
 
       <IonItem>
         <IonLabel>Workers available</IonLabel>

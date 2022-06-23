@@ -50,9 +50,13 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
   //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
     // Fetch Function
-const acess_token = "access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g"
+
     fetch(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?${acess_token}`
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?` +
+        new URLSearchParams({
+          access_token:
+            "pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g",
+        })
     )
       .then((response) => response.json())
       .then((data) => {
@@ -83,6 +87,7 @@ const acess_token = "access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDR
   useEffect(() => {
     getPickUpCoordinates();
     getDropOffCoordinates();
+    console.log(pickUp,dropoff);
   }, [pickUp, dropoff]);
 
   return (

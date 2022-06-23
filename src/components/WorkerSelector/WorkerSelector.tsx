@@ -12,34 +12,33 @@ import "./WorkerSelector.scss";
 import workerList from "../../data/workerList";
 
 interface MapsProps {
-  dropOffCoordinates: string;
-  pickupCoordinates: string;
+  pickupCoordinates: number[];
+  dropOffCoordinates: number[];
 }
 
-const WorkerSelector: React.FC<MapsProps> = ({pickupCoordinates,dropOffCoordinates}) => {
-  // Make Sure Maps	
+const WorkerSelector: React.FC<MapsProps> = ({
+  pickupCoordinates,
+  dropOffCoordinates,
+}) => {
+  // Make Sure Maps
   //console.log(pickupCoordinates,dropOffCoordinates)
   const [tripTime, setTripTime] = useState(0);
 
   useEffect(() => {
-    const pickupdrive = `${pickupCoordinates[0]},${pickupCoordinates[1]}`
-    const dropoffdrive = `${dropOffCoordinates[0]},${dropOffCoordinates[1]}`
-    const acess_token = `?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`
+    const pickupdrive = `${pickupCoordinates[0]},${pickupCoordinates[1]}`;
+    const dropoffdrive = `${dropOffCoordinates[0]},${dropOffCoordinates[1]}`;
+    const acess_token = `?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`;
     const htt = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupdrive};${dropoffdrive}${acess_token}`;
     //console.log(`${htt}`)
-    
+
     //get trip time from map box api
     //2pickup coordinates and 2 points for the dropoff location [x]
-    fetch(
-      `${[htt]}`,
-
-    ).then((response) => response.json())
-    .then((htt) => {
-      setTripTime(htt);
-    });
-  }, [pickupCoordinates,dropOffCoordinates]);
-
-
+    fetch(`${[htt]}`)
+      .then((response) => response.json())
+      .then((htt) => {
+        setTripTime(htt);
+      });
+  }, [pickupCoordinates, dropOffCoordinates]);
 
   return (
     <IonList>

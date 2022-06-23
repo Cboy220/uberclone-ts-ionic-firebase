@@ -39,7 +39,7 @@ const WorkerSelector: React.FC = () => {
       {workerList.map((worker, index) => (
         <IonItem key={index}>
           <IonAvatar slot="start">
-            <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655851971/FIXITAPP/ionic-app-images/WorkerSelector/electrician-svgrepo-com_w1mh7o.svg" />
+            <IonImg src={worker.imgUrl} />
           </IonAvatar>
           <IonText slot="start">
             <p>{worker.service}</p>

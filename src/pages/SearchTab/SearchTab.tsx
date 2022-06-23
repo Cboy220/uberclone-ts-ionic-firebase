@@ -11,6 +11,7 @@ import {
   IonInput,
   IonItemDivider,
   IonPage,
+
   IonRow,
   IonTitle,
   IonToolbar,
@@ -23,9 +24,12 @@ import {
 } from "ionicons/icons";
 import "./SearchTab.scss";
 
+//React imports
+import React from "react";
 import { useState } from "react";
 //import { useRouter } from "../../utilities/useRouter/useRouter";
 
+//React Router Dom
 import { Link } from "react-router-dom";
 
 interface MapsProps {
@@ -40,11 +44,10 @@ const SearchTab: React.FC<MapsProps> = (/*props*/) => {
   //debug props
   //console.log(props);
 
-
   const [homeAddrrQuery, setHomeAddrQuery] = useState("");
   const [workerAddrrQuery, setWorkerAddrQuery] = useState("");
 
-  console.log(homeAddrrQuery,workerAddrrQuery);
+  console.log(homeAddrrQuery, workerAddrrQuery);
   console.log(setHomeAddrQuery);
   console.log(setWorkerAddrQuery);
 
@@ -56,7 +59,20 @@ const SearchTab: React.FC<MapsProps> = (/*props*/) => {
         dropoff: workerAddrrQuery,
       },
     },
+    staticContext: true,
   };
+
+  class LocationLink extends React.Component {
+    render() {
+      return (
+        <Link to={location}>
+          <IonButton expand="block" color={"dark"}>
+            Confirm worker reservation
+          </IonButton>
+        </Link>
+      );
+    }
+  }
 
   return (
     <IonPage>
@@ -120,12 +136,9 @@ const SearchTab: React.FC<MapsProps> = (/*props*/) => {
               </IonButton>
             </IonCol>
           </IonRow>
-
-          <Link to={location}>
-            <IonButton expand="block" color={"dark"}>
-              Confirm worker reservation
-            </IonButton>
-          </Link>
+          {/**Confirm WorkerReservation Link */}
+          <LocationLink />
+          {/**Confirm WorkerReservation Link */}
         </IonGrid>
       </IonContent>
     </IonPage>

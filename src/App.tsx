@@ -1,4 +1,4 @@
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import {
   IonApp,
   IonRouterOutlet,
@@ -40,7 +40,7 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
+      <Switch >
         <Route exact={true} path="/home" component={HomeTab} />
 
         <Route exact={true} path="/search" component={SearchTab} />
@@ -56,7 +56,7 @@ const App: React.FC = () => (
           path="/"
           render={() => <Redirect to="/tabs/home" />}
         />
-      </IonRouterOutlet>
+      </Switch>
     </IonReactRouter>
   </IonApp>
 );

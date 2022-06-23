@@ -11,8 +11,8 @@ mapboxgl.accessToken =
 //import passed map id
 interface MapsProps {
   name: string;
-  dropOffCoordinates: string;
-  pickupCoordinates: string;
+  pickupCoordinates: number[];
+  dropOffCoordinates: number[];
 }
 
 const Map: React.FC<MapsProps> = (props, { name }) => {

@@ -15,11 +15,13 @@ import "./ConfirmTab.scss";
 import Map from "../../components/Map/Map";
 import { useEffect, useState } from "react";
 //
-import { useRouter } from "../../utilities/useRouter/useRouter";
+//import { useRouter } from "../../utilities/useRouter/useRouter";
 import WorkerSelector from "../../components/WorkerSelector/WorkerSelector";
 
 interface MapsProps {
   name: string;
+  pickupCoordinates: number[];
+  dropOffCoordinates: number[];
 }
 
 const ConfirmTab: React.FC<MapsProps> = () => {
@@ -41,8 +43,8 @@ const ConfirmTab: React.FC<MapsProps> = () => {
   //debug props
   //console.log(props);
 
-  const [pickupCoordinates, setPickupCoordinates] = useState("");
-  const [dropOffCoordinates, setDropOffCoordinates] = useState("");
+  const [pickupCoordinates, setPickupCoordinates] = useState([0,0]);
+  const [dropOffCoordinates, setDropOffCoordinates] = useState([0,0]);
 
   //get PickupCoordinates Start
   const getPickUpCoordinates = () => {
@@ -85,9 +87,11 @@ const ConfirmTab: React.FC<MapsProps> = () => {
     getPickUpCoordinates();
     getDropOffCoordinates();
     //console.log(pickUp, dropoff);
-    return () => {
+  /**
+   *   return () => {
       <IonRefresherContent></IonRefresherContent>;
     };
+   */
   }, [pickUp, dropoff]);
 
   return (
@@ -102,7 +106,6 @@ const ConfirmTab: React.FC<MapsProps> = () => {
       </IonHeader>
       <IonContent
         fullscreen
-        scrollEvents={true}
 
       >
         <IonHeader collapse="condense">

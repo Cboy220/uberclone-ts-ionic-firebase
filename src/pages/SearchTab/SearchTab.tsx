@@ -24,7 +24,7 @@ import {
 import "./SearchTab.scss";
 
 import { useState } from "react";
-import { useRouter } from "../../utilities/useRouter/useRouter";
+//import { useRouter } from "../../utilities/useRouter/useRouter";
 
 import { Link } from "react-router-dom";
 
@@ -40,15 +40,13 @@ const SearchTab: React.FC<MapsProps> = (/*props*/) => {
   //debug props
   //console.log(props);
 
-  //parse
-  //console.log(pickup,dropoff)
 
   const [homeAddrrQuery, setHomeAddrQuery] = useState("");
   const [workerAddrrQuery, setWorkerAddrQuery] = useState("");
 
-  //console.log(homeAddrrQuery,workerAddrrQuery);
-  //console.log(setHomeAddrQuery);
-  //console.log(setWorkerAddrQuery);
+  console.log(homeAddrrQuery,workerAddrrQuery);
+  console.log(setHomeAddrQuery);
+  console.log(setWorkerAddrQuery);
 
   const location = {
     pathname: `/tabs/confirm?pickup=${homeAddrrQuery}&dropoff=${workerAddrrQuery}`,

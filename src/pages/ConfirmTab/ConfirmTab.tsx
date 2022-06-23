@@ -5,14 +5,8 @@ import {
   IonContent,
   IonGrid,
   IonHeader,
-  IonItem,
-  IonLabel,
-  IonList,
   IonPage,
-  IonRefresher,
   IonRefresherContent,
-  IonSelect,
-  IonSelectOption,
   IonText,
   IonTitle,
   IonToolbar,
@@ -42,10 +36,10 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
   //console.log("DropOff:", dropoff);
 
   //debug router
-  console.log(router);
+  //console.log(router);
 
   //debug props
-  console.log(props);
+  //console.log(props);
 
   const [pickupCoordinates, setPickupCoordinates] = useState("");
   const [dropOffCoordinates, setDropOffCoordinates] = useState("");
@@ -90,7 +84,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
   useEffect(() => {
     getPickUpCoordinates();
     getDropOffCoordinates();
-    console.log(pickUp, dropoff);
+    //console.log(pickUp, dropoff);
     return () => {
       <IonRefresherContent></IonRefresherContent>;
     };
@@ -109,9 +103,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
       <IonContent
         fullscreen
         scrollEvents={true}
-        onIonScrollStart={() => {}}
-        onIonScroll={() => {}}
-        onIonScrollEnd={() => {}}
+
       >
         <IonHeader collapse="condense">
           <IonToolbar>
@@ -130,7 +122,10 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
           <IonText>
             <h2>Confirm Worker</h2>
           </IonText>
-          <WorkerSelector />
+          <WorkerSelector 
+          dropOffCoordinates={dropOffCoordinates}
+          pickupCoordinates={pickupCoordinates}
+          />
           {/**Confirm Button */}
           <IonButton expand="block" color={"success"}>
             Confirm Worker Reservation

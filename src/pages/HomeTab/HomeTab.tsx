@@ -18,14 +18,11 @@ import {
 import "./HomeTab.scss";
 import Map from "../../components/Map/Map";
 
-
 interface MapsProps {
   name: string;
   dropOffCoordinates: string;
   pickupCoordinates: string;
 }
-
-
 
 const HomeTab: React.FC<MapsProps> = () => {
   return (

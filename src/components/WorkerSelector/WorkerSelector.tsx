@@ -1,12 +1,10 @@
 import {
   IonAvatar,
-  IonContent,
   IonImg,
   IonItem,
   IonItemDivider,
   IonLabel,
   IonList,
-  IonPage,
   IonRouterLink,
   IonSelect,
   IonSelectOption,
@@ -14,6 +12,8 @@ import {
 } from "@ionic/react";
 import React from "react";
 import "./WorkerSelector.scss";
+// Fake api data to test out functionality for now
+import workerList from "../../data/workerList";
 
 const WorkerSelector: React.FC = () => {
   return (
@@ -35,6 +35,26 @@ const WorkerSelector: React.FC = () => {
       </IonRouterLink>
 
       <IonItemDivider />
+
+{workerList.map((worker,index)=>(
+  <IonItem key={index}>
+  <IonAvatar slot="start">
+    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655851971/FIXITAPP/ionic-app-images/WorkerSelector/electrician-svgrepo-com_w1mh7o.svg" />
+  </IonAvatar>
+  <IonText slot="start">
+    <p>Electrician</p>
+    <small className="worker__time">15 mins away</small>
+  </IonText>
+
+  <IonText slot="end">
+    <p> Price $ </p>
+  </IonText>
+</IonItem>
+))}
+
+
+
+<IonItemDivider />
 
       <IonItem>
         <IonLabel>Workers available</IonLabel>

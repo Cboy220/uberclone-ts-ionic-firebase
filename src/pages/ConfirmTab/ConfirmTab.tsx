@@ -22,9 +22,9 @@ interface MapsProps {
   name: string;
 }
 
-const ConfirmTab: React.FC<MapsProps> = (props) => {
+const ConfirmTab: React.FC<MapsProps> = () => {
   //Defined router from utils
-  const router = useRouter();
+  //const router = useRouter();
   // used query here as a string with window & @@params
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -36,7 +36,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
   //console.log("DropOff:", dropoff);
 
   //debug router
-  console.log(router);
+  //console.log(router);
 
   //debug props
   //console.log(props);

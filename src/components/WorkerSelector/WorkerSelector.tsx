@@ -16,28 +16,27 @@ interface MapsProps {
   pickupCoordinates: string;
 }
 
-const WorkerSelector: React.FC<MapsProps> = ({
-  pickupCoordinates,
-  dropOffCoordinates,
-}) => {
-  // Make Sure Maps props are passed here
+const WorkerSelector: React.FC<MapsProps> = ({pickupCoordinates,dropOffCoordinates}) => {
+  // Make Sure Maps	
   //console.log(pickupCoordinates,dropOffCoordinates)
   const [tripTime, setTripTime] = useState(0);
 
   useEffect(() => {
+    const pickupdrive = `${pickupCoordinates[0]},${pickupCoordinates[1]}`
+    const dropoffdrive = `${dropOffCoordinates[0]},${dropOffCoordinates[1]}`
+    const acess_token = `?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`
+    const htt = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupdrive};${dropoffdrive}${acess_token}`;
+    console.log(`${htt}`)
+    
     //get trip time from map box api
     //2pickup coordinates and 2 points for the dropoff location [x]
     fetch(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${
-        [pickupCoordinates][0]
-      },${[pickupCoordinates][1]};${[dropOffCoordinates][0]},${
-        [dropOffCoordinates][1]
-      }?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`
-    );
-  }, [dropOffCoordinates, pickupCoordinates]);
+      `${htt}`,
 
-  const htt = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]},${pickupCoordinates[1]};${dropOffCoordinates[0]},${dropOffCoordinates[1]}?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`;
-  console.log(`${htt}`);
+    );
+  }, [pickupCoordinates,dropOffCoordinates]);
+
+
 
   return (
     <IonList>

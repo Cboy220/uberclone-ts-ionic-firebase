@@ -33,7 +33,7 @@ const HomeTab: React.FC<MapsProps> = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <Map name={"map"} dropOffCoordinates={[]} pickupCoordinates={[]} />
+        <Map name={"map"} dropOffCoordinates={[0,0]} pickupCoordinates={[0,0]} />
         {/**Header */}
 
         <IonGrid>

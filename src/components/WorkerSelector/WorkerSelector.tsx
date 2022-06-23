@@ -51,7 +51,6 @@ const WorkerSelector: React.FC<MapsProps> = ({
             <p>{worker.service}</p>
             <small className="worker__time">15 mins away</small>
           </IonText>
-
           <IonText slot="end">
             <p> Price $ </p>
           </IonText>

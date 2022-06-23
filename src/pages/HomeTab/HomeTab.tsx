@@ -35,8 +35,8 @@ const HomeTab: React.FC<MapsProps> = () => {
       <IonContent fullscreen>
         <Map
           name={"map"}
-          dropOffCoordinates={[0, 0]}
-          pickupCoordinates={[0, 0]}
+          dropOffCoordinates={[31.239661,30.056156]}
+          pickupCoordinates={[31.239661,30.056156]}
         />
         {/**Header */}
 

@@ -1,11 +1,12 @@
-.worker__time{
-    color: green;
+.worker__time {
+  color: green;
 }
 
 ion-toggle {
-    --handle-box-shadow: 0 3px 12px rgba(255, 0, 0, 0.6), 0 3px 1px rgba(50, 70, 255, 0.6);
-  
-    overflow: visible;
-  
-    contain: none;
-  }
+  --handle-box-shadow: 0 3px 12px rgba(255, 0, 0, 0.6),
+    0 3px 1px rgba(50, 70, 255, 0.6);
+
+  overflow: visible;
+
+  contain: none;
+}

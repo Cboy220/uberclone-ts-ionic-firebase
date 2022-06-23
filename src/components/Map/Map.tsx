@@ -26,8 +26,8 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
       container: "map",
       style:
         "mapbox://styles/omarashzeinhom98/cl4k5xuzh002h14mtoho5qips?optimize=true",
-      center: [26.8206, 30.8025],
-      zoom: 3,
+      center: [31.239661,30.056156],
+     zoom: 15
     });
     if (props.pickupCoordinates) {
       addToMap(map, props.pickupCoordinates);

@@ -121,7 +121,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
           {/**Worker Selector */}
           <WorkerSelector />
           {/**Confirm Button */}
-          <IonButton expand="block" color={"dark"}>
+          <IonButton expand="block" color={"success"}>
             Confirm Worker Reservation
           </IonButton>
         </IonGrid>

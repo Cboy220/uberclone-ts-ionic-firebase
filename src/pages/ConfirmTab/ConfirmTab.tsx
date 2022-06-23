@@ -13,6 +13,7 @@ import {
   IonRefresherContent,
   IonSelect,
   IonSelectOption,
+  IonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -105,12 +106,19 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent
+        fullscreen
+        scrollEvents={true}
+        onIonScrollStart={() => {}}
+        onIonScroll={() => {}}
+        onIonScrollEnd={() => {}}
+      >
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Confirm</IonTitle>
           </IonToolbar>
         </IonHeader>
+
         <Map
           name={"map"}
           dropOffCoordinates={dropOffCoordinates}
@@ -119,6 +127,9 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
 
         <IonGrid>
           {/**Worker Selector */}
+          <IonText>
+            <h2>Confirm Worker</h2>
+          </IonText>
           <WorkerSelector />
           {/**Confirm Button */}
           <IonButton expand="block" color={"success"}>

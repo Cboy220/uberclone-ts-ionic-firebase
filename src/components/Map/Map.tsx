@@ -64,8 +64,9 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
 
   return (
     <div
-      className="container__map"
+      className="container__map" 
       /*important id for map container */ id="map"
+      /** */ 
     >
       <strong>{name}</strong>
     </div>

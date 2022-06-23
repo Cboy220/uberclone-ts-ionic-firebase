@@ -2,6 +2,9 @@ import {
   IonAvatar,
   IonButton,
   IonButtons,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
   IonCol,
   IonContent,
   IonGrid,
@@ -35,8 +38,8 @@ const HomeTab: React.FC<MapsProps> = () => {
       <IonContent fullscreen>
         <Map
           name={"map"}
-          dropOffCoordinates={[31.239661,30.056156]}
-          pickupCoordinates={[31.239661,30.056156]}
+          dropOffCoordinates={[31.239661, 30.056156]}
+          pickupCoordinates={[31.239661, 30.056156]}
         />
         {/**Header */}
 
@@ -51,8 +54,8 @@ const HomeTab: React.FC<MapsProps> = () => {
               />
             </IonCol>
             <IonCol>
-              <IonText>
-                <h4>Omar AbdElRahman</h4>
+              <IonText class="ion-text-center">
+                <h5>Omar AbdElRahman</h5>
               </IonText>
 
               <IonAvatar security="" slot="">
@@ -70,40 +73,52 @@ const HomeTab: React.FC<MapsProps> = () => {
             <IonRow>
               <IonCol size="4">
                 <IonRouterLink href="/tabs/search">
-                  <IonAvatar>
-                    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
-                  </IonAvatar>
+                  <IonCard color={"dark"}>
+                    <IonCardContent>
+                      <IonText class="ion-text-center">
+                        <h5>Worker</h5>
+                      </IonText>
+                      <IonAvatar slot="end">
+                        <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
+                      </IonAvatar>
 
-                  <IonButton href="/tabs/search" color={"success"}>
-                    <IonText>
-                      <h5>Worker</h5>
-                    </IonText>
-                  </IonButton>
+                      <IonButton
+                        href="/tabs/search"
+                        color={"success"}
+                      ></IonButton>
+                    </IonCardContent>
+                  </IonCard>
                 </IonRouterLink>
               </IonCol>
 
               <IonCol size="4">
                 <IonRouterLink href="/tabs/search">
-                  <IonAvatar>
-                    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
-                  </IonAvatar>
-                  <IonButton color={"secondary"}>
-                    <IonText>
-                      <h5>Profession</h5>
-                    </IonText>
-                  </IonButton>
+                  <IonCard color={"dark"}>
+                    <IonCardContent>
+                      <IonText class="ion-text-center">
+                        <h5>Profession</h5>
+                      </IonText>
+                      <IonAvatar>
+                        <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
+                      </IonAvatar>
+                      <IonButton color={"secondary"}></IonButton>
+                    </IonCardContent>
+                  </IonCard>
                 </IonRouterLink>
               </IonCol>
               <IonCol size="4">
                 <IonRouterLink href="/tabs/search">
-                  <IonAvatar>
-                    <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
-                  </IonAvatar>
-                  <IonButton color={"secondary"}>
-                    <IonText>
-                      <h5>Reserve</h5>
-                    </IonText>
-                  </IonButton>
+                  <IonCard color={"dark"}>
+                    <IonCardContent>
+                      <IonText class="ion-text-center">
+                        <h5>Reserve</h5>
+                      </IonText>
+                      <IonAvatar>
+                        <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
+                      </IonAvatar>
+                      <IonButton color={"secondary"}></IonButton>
+                    </IonCardContent>
+                  </IonCard>
                 </IonRouterLink>
               </IonCol>
 

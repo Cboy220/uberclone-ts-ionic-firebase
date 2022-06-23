@@ -9,6 +9,8 @@ import {
   IonLabel,
   IonList,
   IonPage,
+  IonRefresher,
+  IonRefresherContent,
   IonSelect,
   IonSelectOption,
   IonTitle,
@@ -88,6 +90,9 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
     getPickUpCoordinates();
     getDropOffCoordinates();
     console.log(pickUp,dropoff);
+    return (()=>{
+      <IonRefresherContent></IonRefresherContent>
+    })
   }, [pickUp, dropoff]);
 
   return (

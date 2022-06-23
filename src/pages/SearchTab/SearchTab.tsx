@@ -11,7 +11,6 @@ import {
   IonInput,
   IonItemDivider,
   IonPage,
-
   IonRow,
   IonTitle,
   IonToolbar,
@@ -51,6 +50,7 @@ const SearchTab: React.FC<MapsProps> = (/*props*/) => {
   console.log(setHomeAddrQuery);
   console.log(setWorkerAddrQuery);
 
+  // Set location const for home and worker addresses.
   const location = {
     pathname: `/tabs/confirm?pickup=${homeAddrrQuery}&dropoff=${workerAddrrQuery}`,
     state: {

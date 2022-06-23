@@ -27,16 +27,16 @@ const WorkerSelector: React.FC<MapsProps> = ({
   useEffect(() => {
     const pickupdrive = `${pickupCoordinates[0]},${pickupCoordinates[1]}`;
     const dropoffdrive = `${dropOffCoordinates[0]},${dropOffCoordinates[1]}`;
-    const acess_token = `?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`;
-    const htt = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupdrive};${dropoffdrive}${acess_token}`;
+    const access_token = `?access_token=pk.eyJ1Ijoib21hcmFzaHplaW5ob205OCIsImEiOiJjbDRrMXY5c3MwN3ZpM2NxcHp3ZGVmN3ZyIn0.3Ziuh7Utama_wz_4s8qh2g`;
+    const apidirections = `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupdrive};${dropoffdrive}${access_token}`;
     //console.log(`${htt}`)
 
     //get trip time from map box api
     //2pickup coordinates and 2 points for the dropoff location [x]
-    fetch(`${[htt]}`)
+    fetch(`${[apidirections]}`)
       .then((response) => response.json())
-      .then((htt) => {
-        setTripTime(htt);
+      .then((apidirections) => {
+        setTripTime(apidirections);
       });
   }, [pickupCoordinates, dropOffCoordinates]);
 

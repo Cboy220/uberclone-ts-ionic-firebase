@@ -24,6 +24,7 @@ const WorkerSelector: React.FC<MapsProps> = ({
   //console.log(pickupCoordinates,dropOffCoordinates)
   const [tripTime, setTripTime] = useState(0);
 
+  
   useEffect(() => {
     const pickupdrive = `${pickupCoordinates[0]},${pickupCoordinates[1]}`;
     const dropoffdrive = `${dropOffCoordinates[0]},${dropOffCoordinates[1]}`;
@@ -39,6 +40,8 @@ const WorkerSelector: React.FC<MapsProps> = ({
         setTripTime(htt);
       });
   }, [pickupCoordinates, dropOffCoordinates]);
+
+  
 
   return (
     <IonList>

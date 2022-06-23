@@ -20,8 +20,8 @@ import Map from "../../components/Map/Map";
 
 interface MapsProps {
   name: string;
-  dropOffCoordinates: string;
-  pickupCoordinates: string;
+  pickupCoordinates: number[];
+  dropOffCoordinates: number[];
 }
 
 const HomeTab: React.FC<MapsProps> = () => {
@@ -33,7 +33,7 @@ const HomeTab: React.FC<MapsProps> = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <Map name={"map"} dropOffCoordinates={""} pickupCoordinates={""} />
+        <Map name={"map"} dropOffCoordinates={[]} pickupCoordinates={[]} />
         {/**Header */}
 
         <IonGrid>

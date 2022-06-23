@@ -36,7 +36,7 @@ const ConfirmTab: React.FC<MapsProps> = (props) => {
   //console.log("DropOff:", dropoff);
 
   //debug router
-  //console.log(router);
+  console.log(router);
 
   //debug props
   //console.log(props);

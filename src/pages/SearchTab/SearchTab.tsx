@@ -32,10 +32,10 @@ interface MapsProps {
   name: string;
 }
 
-const SearchTab: React.FC<MapsProps> = (props) => {
+const SearchTab: React.FC<MapsProps> = (/*props*/) => {
   //debug router
-  const router = useRouter();
-  console.log(router);
+  //const router = useRouter();
+  //console.log(router);
 
   //debug props
   //console.log(props);
@@ -47,8 +47,18 @@ const SearchTab: React.FC<MapsProps> = (props) => {
   const [workerAddrrQuery, setWorkerAddrQuery] = useState("");
 
   //console.log(homeAddrrQuery,workerAddrrQuery);
-  console.log(setHomeAddrQuery);
-  console.log(setWorkerAddrQuery);
+  //console.log(setHomeAddrQuery);
+  //console.log(setWorkerAddrQuery);
+
+  const location = {
+    pathname: `/tabs/confirm?pickup=${homeAddrrQuery}&dropoff=${workerAddrrQuery}`,
+    state: {
+      query: {
+        pickup: homeAddrrQuery,
+        dropoff: workerAddrrQuery,
+      },
+    },
+  };
 
   return (
     <IonPage>
@@ -113,17 +123,7 @@ const SearchTab: React.FC<MapsProps> = (props) => {
             </IonCol>
           </IonRow>
 
-          <Link
-            to={{
-              pathname: `/tabs/confirm?pickup=${homeAddrrQuery}&dropoff=${workerAddrrQuery}`,
-              state: {
-                query: {
-                  pickup: `${homeAddrrQuery}`,
-                  dropoff: `${workerAddrrQuery}`,
-                },
-              },
-            }}
-          >
+          <Link to={location}>
             <IonButton expand="block" color={"dark"}>
               Confirm worker reservation
             </IonButton>

@@ -10,6 +10,7 @@ import {
   IonGrid,
   IonHeader,
   IonImg,
+  IonItem,
   IonItemDivider,
   IonPage,
   IonRouterLink,
@@ -20,6 +21,7 @@ import {
 } from "@ionic/react";
 import "./HomeTab.scss";
 import Map from "../../components/Map/Map";
+import { lazy } from "react";
 
 interface MapsProps {
   name: string;
@@ -43,36 +45,12 @@ const HomeTab: React.FC<MapsProps> = () => {
         />
         {/**Header */}
 
-        <IonGrid>
-          <IonRow>
-            <IonCol>
-              <IonImg
-                src={
-                  "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
-                }
-                className="fixit__header__logo"
-              />
-            </IonCol>
-            <IonCol>
-              <IonText class="ion-text-center">
-                <h5>Omar AbdElRahman</h5>
-              </IonText>
-
-              <IonAvatar security="" slot="">
-                <IonImg
-                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
-                  className="fixit__header__avatar"
-                />
-              </IonAvatar>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-
+        
         <IonGrid>
           <IonRow>
             <IonCol size="4">
               <IonRouterLink href="/tabs/search">
-                <IonCard color={"dark"}>
+                <IonCard color={"light"}>
                   <IonCardContent>
                     <IonText class="ion-text-center">
                       <h5>Worker</h5>
@@ -87,7 +65,7 @@ const HomeTab: React.FC<MapsProps> = () => {
 
             <IonCol size="4">
               <IonRouterLink href="/tabs/search">
-                <IonCard color={"dark"}>
+                <IonCard color={"light"}>
                   <IonCardContent>
                     <IonText class="ion-text-center">
                       <h5>Profession</h5>
@@ -101,7 +79,7 @@ const HomeTab: React.FC<MapsProps> = () => {
             </IonCol>
             <IonCol size="4">
               <IonRouterLink href="/tabs/search">
-                <IonCard color={"dark"}>
+                <IonCard color={"light"}>
                   <IonCardContent>
                     <IonText class="ion-text-center">
                       <h5>Reserve</h5>
@@ -109,6 +87,7 @@ const HomeTab: React.FC<MapsProps> = () => {
                     <IonAvatar class="ion-text-center">
                       <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
                     </IonAvatar>
+                    
                   </IonCardContent>
                 </IonCard>
               </IonRouterLink>
@@ -126,6 +105,42 @@ const HomeTab: React.FC<MapsProps> = () => {
         {/**Action Btns */}
 
         {/**input btn */}
+
+        <IonGrid size-sm>
+          <IonRow>
+            <IonCol size="6">
+            <IonCard color={"light"}>
+                  <IonCardContent>
+              <IonImg
+                src={
+                  "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
+                }
+                className="fixit__header__logo"
+                slot="start"
+              />
+              </IonCardContent>
+              </IonCard>
+            </IonCol>
+            
+            <IonCol size="6">
+            <IonCard color={"light"}>
+                  <IonCardContent>
+              <IonText class="ion-text-center">
+                <h5>Omar AbdElRahman</h5>
+              </IonText>
+
+              <IonAvatar  >
+                <IonImg
+                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
+                  className="fixit__header__avatar"
+                />
+              </IonAvatar>
+              </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+
       </IonContent>
     </IonPage>
   );

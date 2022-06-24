@@ -5,6 +5,7 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
+  IonCardSubtitle,
   IonCol,
   IonContent,
   IonGrid,
@@ -45,16 +46,15 @@ const HomeTab: React.FC<MapsProps> = () => {
         />
         {/**Header */}
 
-        
         <IonGrid>
           <IonRow>
             <IonCol size="4">
               <IonRouterLink href="/tabs/search">
                 <IonCard color={"light"}>
                   <IonCardContent>
-                    <IonText class="ion-text-center">
-                      <h5>Worker</h5>
-                    </IonText>
+                    <IonCardSubtitle class="ion-text-center">
+                      Worker
+                    </IonCardSubtitle>
                     <IonAvatar slot="end">
                       <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
                     </IonAvatar>
@@ -67,9 +67,9 @@ const HomeTab: React.FC<MapsProps> = () => {
               <IonRouterLink href="/tabs/search">
                 <IonCard color={"light"}>
                   <IonCardContent>
-                    <IonText class="ion-text-center">
-                      <h5>Profession</h5>
-                    </IonText>
+                    <IonCardSubtitle class="ion-text-center">
+                      Profession
+                    </IonCardSubtitle>
                     <IonAvatar>
                       <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585697/FIXITAPP/nextjs-app-images/ActionButtonImages/worker-tool-search_au8m9f.svg" />
                     </IonAvatar>
@@ -81,13 +81,12 @@ const HomeTab: React.FC<MapsProps> = () => {
               <IonRouterLink href="/tabs/search">
                 <IonCard color={"light"}>
                   <IonCardContent>
-                    <IonText class="ion-text-center">
-                      <h5>Reserve</h5>
-                    </IonText>
+                    <IonCardSubtitle class="ion-text-center">
+                      Reserve
+                    </IonCardSubtitle>
                     <IonAvatar class="ion-text-center">
                       <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655623254/FIXITAPP/nextjs-app-images/ActionButtonImages/clock-svgrepo-com_b913bl.svg" />
                     </IonAvatar>
-                    
                   </IonCardContent>
                 </IonCard>
               </IonRouterLink>
@@ -109,38 +108,37 @@ const HomeTab: React.FC<MapsProps> = () => {
         <IonGrid size-sm>
           <IonRow>
             <IonCol size="6">
-            <IonCard color={"light"}>
-                  <IonCardContent>
-              <IonImg
-                src={
-                  "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
-                }
-                className="fixit__header__logo"
-                slot="start"
-              />
-              </IonCardContent>
+              <IonCard color={"light"}>
+                <IonCardContent>
+                  <IonImg
+                    src={
+                      "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
+                    }
+                    className="fixit__header__logo"
+                    slot="start"
+                  />
+                </IonCardContent>
               </IonCard>
             </IonCol>
-            
-            <IonCol size="6">
-            <IonCard color={"light"}>
-                  <IonCardContent>
-              <IonText class="ion-text-center">
-                <h5>Omar AbdElRahman</h5>
-              </IonText>
 
-              <IonAvatar  >
-                <IonImg
-                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
-                  className="fixit__header__avatar"
-                />
-              </IonAvatar>
-              </IonCardContent>
+            <IonCol size="6">
+              <IonCard color={"light"}>
+                <IonCardContent>
+                  <IonCardSubtitle class="ion-text-center">
+                    Omar AbdElRahman
+                  </IonCardSubtitle>
+
+                  <IonAvatar>
+                    <IonImg
+                      src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
+                      className="fixit__header__avatar"
+                    />
+                  </IonAvatar>
+                </IonCardContent>
               </IonCard>
             </IonCol>
           </IonRow>
         </IonGrid>
-
       </IonContent>
     </IonPage>
   );

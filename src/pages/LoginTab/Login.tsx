@@ -17,7 +17,7 @@ import "./Login.scss";
 const Login = () => {
   return (
     <IonPage>
-      <IonContent fullscreen>
+      <IonContent fullscreen >
         <IonHeader>
           <IonToolbar>
             <IonTitle size={"large"}>Login</IonTitle>
@@ -28,7 +28,7 @@ const Login = () => {
               <IonCol size="12">
                 <IonImg
                   src={
-                    "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656172754/FIXITAPP/ionic-app-images/Login%20and%20get%20started/undraw_enter_uhqk_sgcssl.svg"
+                    "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656174173/FIXITAPP/ionic-app-images/Login%20and%20get%20started/undraw_coffee_break_h3uu_zwe2dw.svg"
                   }
                   class="login__svg"
                 />

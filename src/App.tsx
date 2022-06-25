@@ -34,6 +34,7 @@ import "./theme/variables.scss";
 
 /**Mapbox-gl */
 import "mapbox-gl/dist/mapbox-gl.css";
+import Login from "./pages/LoginTab/Login";
 
 setupIonicReact();
 
@@ -46,6 +47,8 @@ const App: React.FC = () => (
         <Route exact={true} path="/search" component={SearchTab} />
 
         <Route exact={true} path="/confirm" component={ConfirmTab} />
+
+        <Route exact={true} path="/login" component={Login}  />
 
         <Route exact path="/">
           <Redirect to="/home" />

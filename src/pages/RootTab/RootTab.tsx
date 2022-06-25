@@ -23,7 +23,6 @@ const RootTab: React.FC = () => (
       <Route path="/tabs/search" component={SearchTab} exact={true} />
       <Route path="/tabs/confirm" component={ConfirmTab} exact={true} />
       {/**Change Login tab to a sidemenu item */}
-      <Route path="/tabs/login" component={Login} exact={true} />
       <Route
         path="/tabs"
         render={() => <Redirect to="/tabs/home" />}
@@ -39,10 +38,7 @@ const RootTab: React.FC = () => (
     <IonTabBar slot="bottom">
       {/**Change Login tab to a sidemenu item */}
 
-      <IonTabButton tab="login" href="/tabs/login">
-        <IonIcon icon={logInSharp} />
-        <IonLabel>Login</IonLabel>
-      </IonTabButton>
+ 
 
       <IonTabButton tab="home" href="/tabs/home">
         <IonIcon icon={map} />

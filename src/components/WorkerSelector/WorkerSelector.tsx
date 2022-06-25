@@ -53,7 +53,7 @@ const WorkerSelector: React.FC<MapsProps> = ({
             <small className="worker__time">15 mins away</small>
           </IonText>
           <IonText slot="end">
-            <p> {"$" + tripTime * worker.multiplier}</p>
+            <p> {"$" + (tripTime * worker.multiplier).toFixed(2)}</p>
           </IonText>
         </IonItem>
       ))}

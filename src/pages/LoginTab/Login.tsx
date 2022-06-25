@@ -65,7 +65,7 @@ console.log(history);
               </IonCol>
 
               <IonCol size="12">
-                <IonButton color={"success"} expand={"block"}>
+                <IonButton color={"success"} expand={"block"} onClick={()=> signInWithPopup}>
                   Sign in with Google
                 </IonButton>
               </IonCol>

@@ -19,13 +19,14 @@ import { useRouter } from "../../utilities/useRouter/useRouter";
 import {
   signInWithPopup,
   onAuthStateChanged,
+  getAuth,
 } from "firebase/auth";
 //from Firebase.tsx file in root folder
 import {auth , provider} from '../../Firebase';
 import { useHistory } from "react-router";
 
 const Login = () => {
-  const history = useHistory();
+
   //debug router
   const router = useRouter();
   console.log(router);
@@ -33,7 +34,7 @@ const Login = () => {
   useEffect(()=>{
     onAuthStateChanged(auth,user=>{
       if(user){
-        history.push('/')
+       // history.push('/')
       }
     })
   })

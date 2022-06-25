@@ -23,8 +23,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 
-const provider = new GoogleAuthProvider()
-const auth = getAuth
+const provider = new GoogleAuthProvider();
+
+// gets error when i  try to export them all
+export const auth = getAuth();
 
 //exported here so other files can have access to auth, provider and app
-export {app, provider, auth}
+export {app, provider};

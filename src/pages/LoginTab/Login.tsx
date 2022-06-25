@@ -11,13 +11,22 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import React from "react";
+import React, { useEffect } from "react";
 import "./Login.scss";
+//Custom use router
+import { useRouter } from "../../utilities/useRouter/useRouter";
+//Sign with popup imported directly from firebase auth
+import {
+  signInWithPopup,
+  onAuthStateChanged,
+} from "firebase/auth";
+//from Firebase.tsx file
+import {auth , provider} from '../../Firebase';
 
 const Login = () => {
   return (
     <IonPage>
-      <IonContent fullscreen >
+      <IonContent fullscreen>
         <IonHeader>
           <IonToolbar>
             <IonTitle size={"large"}>Login</IonTitle>
@@ -27,8 +36,8 @@ const Login = () => {
             <IonRow>
               <IonCol size="12">
                 <IonImg
-                className="login__icon"
-                src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
+                  className="login__icon"
+                  src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655577547/FIXITAPP/ionic-app-images/header/fix__it__header__logo_t8mpen.svg"
                 />
               </IonCol>
               <IonCol size="12">

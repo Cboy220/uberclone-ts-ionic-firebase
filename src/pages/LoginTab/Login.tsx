@@ -12,6 +12,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
+import "./Login.scss";
 
 const Login = () => {
   return (
@@ -29,6 +30,7 @@ const Login = () => {
                   src={
                     "https://res.cloudinary.com/dxgqvvg0z/image/upload/v1656172754/FIXITAPP/ionic-app-images/Login%20and%20get%20started/undraw_enter_uhqk_sgcssl.svg"
                   }
+                  class="login__svg"
                 />
               </IonCol>
 

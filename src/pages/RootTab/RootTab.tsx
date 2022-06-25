@@ -35,7 +35,15 @@ const RootTab: React.FC = () => (
         exact={true}
       />
     </IonRouterOutlet>
+
     <IonTabBar slot="bottom">
+      {/**Change Login tab to a sidemenu item */}
+
+      <IonTabButton tab="login" href="/tabs/login">
+        <IonIcon icon={logInSharp} />
+        <IonLabel>Login</IonLabel>
+      </IonTabButton>
+
       <IonTabButton tab="home" href="/tabs/home">
         <IonIcon icon={map} />
         <IonLabel>Home</IonLabel>
@@ -47,10 +55,6 @@ const RootTab: React.FC = () => (
       <IonTabButton tab="confirm" href="/tabs/confirm">
         <IonIcon icon={checkmarkDone} />
         <IonLabel>Confirm</IonLabel>
-      </IonTabButton>
-      <IonTabButton tab="login" href="/tabs/login">
-        <IonIcon icon={logInSharp} />
-        <IonLabel>Login</IonLabel>
       </IonTabButton>
     </IonTabBar>
   </IonTabs>

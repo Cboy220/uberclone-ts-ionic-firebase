@@ -38,7 +38,7 @@ const Map: React.FC<MapsProps> = (props, { name }) => {
     if (props.pickupCoordinates && props.dropOffCoordinates) {
       map.fitBounds([props.dropOffCoordinates, props.pickupCoordinates, {}], {
         padding: 50,
-        zoom: 5
+        zoom: 10,
       });
     }
   }, [props.pickupCoordinates, props.dropOffCoordinates]);

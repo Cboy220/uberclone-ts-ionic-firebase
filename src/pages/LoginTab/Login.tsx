@@ -20,10 +20,23 @@ import {
   signInWithPopup,
   onAuthStateChanged,
 } from "firebase/auth";
-//from Firebase.tsx file
+//from Firebase.tsx file in root folder
 import {auth , provider} from '../../Firebase';
+import { useHistory } from "react-router";
 
 const Login = () => {
+  const history = useHistory();
+  //debug router
+  const router = useRouter();
+  console.log(router);
+  
+  useEffect(()=>{
+    onAuthStateChanged(auth,user=>{
+      if(user){
+        history.push('/')
+      }
+    })
+  })
   return (
     <IonPage>
       <IonContent fullscreen>

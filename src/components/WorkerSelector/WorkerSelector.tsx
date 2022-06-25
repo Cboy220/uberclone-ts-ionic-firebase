@@ -33,11 +33,12 @@ const WorkerSelector: React.FC<MapsProps> = ({
 
     //get trip time from map box api
     //2pickup coordinates and 2 points for the dropoff location [x]
-    fetch(`${[apidirections]}`)
+    const tripTime = fetch(`${[apidirections]}`)
       .then((response) => response.json())
-      .then((apidirections) => {
-        setTripTime(apidirections);
+      .then((data) => {
+        setTripTime(data.routes[0].duration / 100);
       });
+    //these are added to the dependency array to show the setTripTime dont remove or it will not be shown
   }, [pickupCoordinates, dropOffCoordinates]);
 
   return (
@@ -52,7 +53,7 @@ const WorkerSelector: React.FC<MapsProps> = ({
             <small className="worker__time">15 mins away</small>
           </IonText>
           <IonText slot="end">
-            <p> Price $ </p>
+            <p> {'$'+ (tripTime*worker.multiplier)}</p>
           </IonText>
         </IonItem>
       ))}

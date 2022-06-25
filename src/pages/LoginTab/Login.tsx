@@ -64,11 +64,9 @@ console.log(history);
                 />
               </IonCol>
 
-              <IonCol size="12">
-                <IonButton color={"success"} expand={"block"} onClick={()=> signInWithPopup}>
+                <IonButton color={"success"} expand={"block"} onClick={()=> signInWithPopup(auth, provider)}>
                   Sign in with Google
                 </IonButton>
-              </IonCol>
 
               <IonCol size="6">
                 <IonRouterLink href="/forgotpassword">

@@ -27,9 +27,10 @@ import { useHistory } from "react-router";
 
 const Login = () => {
 const history = useHistory();
+console.log(history);
   //debug router
   const router = useRouter();
-  console.log(router);
+  //console.log(router);
   
   useEffect(()=>{
     onAuthStateChanged(auth,user=>{

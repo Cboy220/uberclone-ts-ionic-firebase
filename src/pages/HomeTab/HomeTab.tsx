@@ -36,7 +36,8 @@ interface MapsProps {
   dropOffCoordinates: number[];
   username: string;
   password: string;
-  prevState: null
+  prevState: null;
+  name: string;
 
 }
 
@@ -162,12 +163,12 @@ const HomeTab: React.FC<MapsProps> = () => {
                 <IonCardContent>
                   <IonCardSubtitle class="ion-text-center">
 
-                    {user }
+                    {user && user.name}
                   </IonCardSubtitle>
 
                   <IonAvatar>
                     <IonImg
-                      src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1653641529/personal_portofolio_assets_2022/pp_home_removedbg_g5eq7r.webp"
+                      src={user && user.phototUrl}
                       className="fixit__header__avatar"
                     />
                   </IonAvatar>

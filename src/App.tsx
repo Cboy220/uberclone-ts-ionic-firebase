@@ -40,7 +40,7 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter forceRefresh={true}>
+    <IonReactRouter forceRefresh={false}>
       <Switch >
         <Route exact={true} path="/home" component={HomeTab} />
 
@@ -51,7 +51,7 @@ const App: React.FC = () => (
         <Route exact={true} path="/login" component={Login}  />
 
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/tabs/home" />
         </Route>
         <Route path="/tabs" component={RootTab} />
         <Route

@@ -38,34 +38,28 @@ interface MapsProps {
   password: string;
   prevState: null;
   name: string;
-
 }
 
 const HomeTab: React.FC<MapsProps> = () => {
-  const [user, setUser] = useState<any|null>(null);
-  
+  const [user, setUser] = useState<any | null>(null);
+
   console.log(user);
   console.log(setUser);
-  
-
 
   useEffect(() => {
     return onAuthStateChanged(auth, (user) => {
       if (user != null) {
         //history.push('/');
-    setUser({
+        setUser({
           name: user.displayName,
           photoUrl: user.photoURL,
         });
-  
       } else {
         setUser(null);
         //history.push("/login");
       }
     });
   }, []);
-
-
 
   return (
     <IonPage>
@@ -93,7 +87,10 @@ const HomeTab: React.FC<MapsProps> = () => {
                     </IonCardSubtitle>
                     <IonAvatar slot="end">
                       {/**{user && user.phototUrl} */}
-                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" onClick={()=> signOut(auth)} />
+                      <IonImg
+                        src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg"
+                        onClick={() => signOut(auth)}
+                      />
                     </IonAvatar>
                   </IonCardContent>
                 </IonCard>
@@ -162,7 +159,6 @@ const HomeTab: React.FC<MapsProps> = () => {
               <IonCard color={"light"}>
                 <IonCardContent>
                   <IonCardSubtitle class="ion-text-center">
-
                     {user && user.name}
                   </IonCardSubtitle>
 

@@ -16,40 +16,28 @@ import "./Login.scss";
 //Custom use router
 import { useRouter } from "../../utilities/useRouter/useRouter";
 //Sign with popup imported directly from firebase auth
-import {
-  signInWithPopup,
-  onAuthStateChanged,
-  getAuth,
-} from "firebase/auth";
+import { signInWithPopup, onAuthStateChanged, getAuth } from "firebase/auth";
 //from Firebase.tsx file in root folder
-import {auth , provider} from '../../Firebase';
+import { auth, provider } from "../../Firebase";
 import { useHistory } from "react-router";
-// 
-
-
-
+//
 
 const Login = () => {
-const history = useHistory();
-console.log(history);
-  //debug router
-  const router = useRouter();
-  //console.log(router);
-  
-  useEffect(()=>{
-    return onAuthStateChanged(auth,user=>{
-      if(user){
-      history.push('/');
-      setUser({
-        name: user.displayName,
-        photoUrl: user.photoURL
-      })
+  const history = useHistory();
+  console.log(history);
 
-      } 
-    })
+  useEffect(() => {
+    return onAuthStateChanged(auth, (user) => {
+      if (user) {
+        history.push("/");
+        setUser({
+          name: user.displayName,
+          photoUrl: user.photoURL,
+        });
+      }
+    });
   });
 
-  
   return (
     <IonPage>
       <IonContent fullscreen>
@@ -75,9 +63,13 @@ console.log(history);
                 />
               </IonCol>
 
-                <IonButton color={"success"} expand={"block"} onClick={()=> signInWithPopup(auth, provider)}>
-                  Sign in with Google
-                </IonButton>
+              <IonButton
+                color={"success"}
+                expand={"block"}
+                onClick={() => signInWithPopup(auth, provider)}
+              >
+                Sign in with Google
+              </IonButton>
 
               <IonCol size="6">
                 <IonRouterLink href="/forgotpassword">
@@ -96,7 +88,8 @@ console.log(history);
 };
 
 export default Login;
-function setUser(arg0: { name: string | null; photoUrl: string | null; }) {
+
+
+function setUser(arg0: { name: string | null; photoUrl: string | null }) {
   throw new Error("Function not implemented.");
 }
-

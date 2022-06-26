@@ -19,7 +19,7 @@ import {
 import "./HomeTab.scss";
 //Components
 import Map from "../../components/Map/Map";
-//Custom function useRouter like next js 
+//Custom function useRouter like next js
 import { useRouter } from "../../utilities/useRouter/useRouter";
 
 //React
@@ -27,37 +27,44 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
 //FireBase
-import { onAuthStateChanged, User } from "firebase/auth";
+import { onAuthStateChanged, signOut, User } from "firebase/auth";
 //FireBase File in root folder
 import { auth } from "../../Firebase";
 
-
-
-
-
 interface MapsProps {
-
   pickupCoordinates: number[];
   dropOffCoordinates: number[];
+  username: string;
+  password: string;
+  prevState: null
+
 }
 
 const HomeTab: React.FC<MapsProps> = () => {
-  const [user, setUser] = useState(null);
-  const router= useRouter();
+  const [user, setUser] = useState<any|null>(null);
   
-  const history = useHistory();
+  console.log(user);
+  console.log(setUser);
+  
 
-  useEffect(()=>{
-    return onAuthStateChanged(auth,(user)=>{
-      if(user){
-     //history.push('/');
-  setUser({ user: user.displayName})
+
+  useEffect(() => {
+    return onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        //history.push('/');
+    setUser({
+          name: user.displayName,
+          photoUrl: user.photoURL,
+        });
+  
       } else {
         setUser(null);
         //history.push("/login");
       }
-    })
-  }, [])
+    });
+  }, []);
+
+
 
   return (
     <IonPage>
@@ -84,9 +91,8 @@ const HomeTab: React.FC<MapsProps> = () => {
                       Worker
                     </IonCardSubtitle>
                     <IonAvatar slot="end">
-
                       {/**{user && user.phototUrl} */}
-                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
+                      <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" onClick={()=> signOut(auth)} />
                     </IonAvatar>
                   </IonCardContent>
                 </IonCard>
@@ -155,6 +161,8 @@ const HomeTab: React.FC<MapsProps> = () => {
               <IonCard color={"light"}>
                 <IonCardContent>
                   <IonCardSubtitle class="ion-text-center">
+
+                    {user }
                   </IonCardSubtitle>
 
                   <IonAvatar>

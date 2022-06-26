@@ -1,36 +1,64 @@
 import {
   IonAvatar,
   IonButton,
-  IonButtons,
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonCardSubtitle,
   IonCol,
   IonContent,
   IonGrid,
   IonHeader,
   IonImg,
-  IonItem,
-  IonItemDivider,
   IonPage,
   IonRouterLink,
   IonRow,
-  IonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+//Scss
 import "./HomeTab.scss";
+//Components
 import Map from "../../components/Map/Map";
-import { lazy } from "react";
+//Custom function useRouter like next js 
+import { useRouter } from "../../utilities/useRouter/useRouter";
+
+//React
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+
+//FireBase
+import { onAuthStateChanged, User } from "firebase/auth";
+//FireBase File in root folder
+import { auth } from "../../Firebase";
+
+
+
+
 
 interface MapsProps {
-  name: string;
+
   pickupCoordinates: number[];
   dropOffCoordinates: number[];
 }
 
 const HomeTab: React.FC<MapsProps> = () => {
+  const [user, setUser] = useState(null);
+  const router= useRouter();
+  
+  const history = useHistory();
+
+  useEffect(()=>{
+    return onAuthStateChanged(auth,(user)=>{
+      if(user){
+     //history.push('/');
+  setUser({ user: user.displayName})
+      } else {
+        setUser(null);
+        //history.push("/login");
+      }
+    })
+  }, [])
+
   return (
     <IonPage>
       <IonHeader>
@@ -56,6 +84,8 @@ const HomeTab: React.FC<MapsProps> = () => {
                       Worker
                     </IonCardSubtitle>
                     <IonAvatar slot="end">
+
+                      {/**{user && user.phototUrl} */}
                       <IonImg src="https://res.cloudinary.com/dxgqvvg0z/image/upload/v1655585748/FIXITAPP/nextjs-app-images/ActionButtonImages/woker-avatar-male_mieyjc.svg" />
                     </IonAvatar>
                   </IonCardContent>
@@ -125,7 +155,6 @@ const HomeTab: React.FC<MapsProps> = () => {
               <IonCard color={"light"}>
                 <IonCardContent>
                   <IonCardSubtitle class="ion-text-center">
-                    Omar AbdElRahman
                   </IonCardSubtitle>
 
                   <IonAvatar>

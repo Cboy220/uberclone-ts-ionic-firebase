@@ -24,6 +24,10 @@ import {
 //from Firebase.tsx file in root folder
 import {auth , provider} from '../../Firebase';
 import { useHistory } from "react-router";
+// 
+
+
+
 
 const Login = () => {
 const history = useHistory();
@@ -33,12 +37,19 @@ console.log(history);
   //console.log(router);
   
   useEffect(()=>{
-    onAuthStateChanged(auth,user=>{
+    return onAuthStateChanged(auth,user=>{
       if(user){
-      history.push('/')
-      }
+      history.push('/');
+      setUser({
+        name: user.displayName,
+        photoUrl: user.photoURL
+      })
+
+      } 
     })
-  })
+  });
+
+  
   return (
     <IonPage>
       <IonContent fullscreen>
@@ -85,3 +96,7 @@ console.log(history);
 };
 
 export default Login;
+function setUser(arg0: { name: string | null; photoUrl: string | null; }) {
+  throw new Error("Function not implemented.");
+}
+

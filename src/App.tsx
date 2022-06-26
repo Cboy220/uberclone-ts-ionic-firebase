@@ -1,7 +1,6 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 import {
   IonApp,
-  IonRouterOutlet,
   setupIonicReact,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
@@ -40,7 +39,7 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter forceRefresh={false}>
+    <IonReactRouter forceRefresh={true}>
       <Switch >
         <Route exact={true} path="/home" component={HomeTab} />
 
@@ -57,7 +56,7 @@ const App: React.FC = () => (
         <Route
           exact={true}
           path="/"
-          render={() => <Redirect to="/tabs/home" />}
+          render={() => <Redirect to="/login" />}
         />
       </Switch>
     </IonReactRouter>
